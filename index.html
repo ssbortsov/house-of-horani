@@ -256,7 +256,7 @@ footer .bottom div{display:flex;gap:32px}
 </style>
 <style>
 /* ---------- home ---------- */
-.fr{position:relative;height:720px;overflow:hidden;color:var(--on-dark);display:flex;align-items:flex-end;padding:0 var(--mr) 40px var(--m)}
+.fr{position:relative;height:100vh;height:100svh;min-height:560px;overflow:hidden;color:var(--on-dark);display:flex;align-items:flex-end;padding:0 var(--mr) 40px var(--m)}
 .fr>img{position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover;will-change:transform;transition:scale 1.6s var(--ease)}
 .fr::after{content:"";position:absolute;inset:0;background:rgb(0 0 0 / .2);pointer-events:none}
 .fr:hover>img{scale:1.03}
@@ -272,7 +272,7 @@ footer .bottom div{display:flex;gap:32px}
 .btn-line{height:56px;padding:0 36px;display:inline-grid;place-items:center;border:1px solid rgb(249 248 239 / .6);color:var(--on-dark);transition:background .3s,color .3s}
 .btn-line span{display:inline-flex;gap:12px;align-items:center}
 .btn-line:hover{background:var(--cream);color:var(--ink)}
-.set{display:grid;grid-template-columns:1fr 1fr;background:var(--footer);color:var(--on-dark);min-height:720px}
+.set{display:grid;grid-template-columns:1fr 1fr;background:var(--footer);color:var(--on-dark);min-height:100vh;min-height:100svh}
 .set .img{overflow:hidden;background:var(--ph)}
 .set .img img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
 .set:hover .img img{transform:scale(1.04)}
@@ -287,9 +287,9 @@ footer .bottom div{display:flex;gap:32px}
 .home-cards .pcard .img{aspect-ratio:250/320}
 @media (max-width:1100px){.dej{padding-inline:96px}.home-cards{grid-template-columns:repeat(3,1fr)}.set .txt{padding:96px 48px 48px}}
 @media (max-width:760px){
-  .fr{height:min(150vw,640px);padding-bottom:32px}
+  .fr{height:100vh;height:100svh;min-height:480px;padding-bottom:32px}
   .fr .in{gap:32px}.fr p{font-size:16px;white-space:normal}
-  .set{grid-template-columns:1fr}.set .img{aspect-ratio:1}.set .txt{padding:48px var(--mr) 56px var(--m);gap:40px}
+  .set{grid-template-columns:1fr}.set .img{height:100vh;height:100svh;min-height:420px}.set .txt{padding:48px var(--mr) 56px var(--m);gap:40px}
   .set h2{font-size:36px}.set p{font-size:16px}
   .dej{padding:72px var(--mr) 0 var(--m)}.dej h2{font-size:28px}
   .home-cards{grid-template-columns:repeat(2,1fr);padding-bottom:64px}
