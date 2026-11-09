@@ -1,3 +1,3 @@
-# House of Horani — Bois Mira
+# House of Horani
 
-HTML-вёрстка страницы продукта Bois Mira по макету Figma.
+HTML-вёрстка по макету Figma: главная (index.html) и страница аромата Bois Mira (bois-mira.html).

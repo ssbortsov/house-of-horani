@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Bois Mira — House of Horani</title>
+<title>House of Horani</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@500;600&family=Onest:wght@300;400;500;600&display=swap">
@@ -68,7 +68,7 @@ img{display:block;max-width:100%}
 }
 
 /* ---------- hero ---------- */
-.hero{position:relative;height:100vh;height:100svh;min-height:680px;overflow:hidden;background:var(--ph)}
+.hero{position:relative;height:720px;overflow:hidden;background:var(--ph)}
 .track{display:flex;height:100%;transition:transform 1s var(--ease);will-change:transform}
 .track figure{flex:0 0 50%;height:100%;margin:0;overflow:hidden}
 .track img{width:100%;height:100%;object-fit:cover}
@@ -225,7 +225,7 @@ footer .bottom div{display:flex;gap:32px}
 }
 @media (max-width:760px){
   .hero-wrap{display:block}
-  .hero{height:100vh;height:100svh;min-height:480px}
+  .hero{height:min(110vw,560px)}
   .track figure{flex-basis:100%}
   .ctrl{inset:0}
   .card{position:relative;left:auto;right:auto;top:auto;translate:none;width:auto;max-width:none;margin:0;padding:32px var(--mr) 40px var(--m)}
@@ -254,7 +254,51 @@ footer .bottom div{display:flex;gap:32px}
   .rv.pre{transform:none}
 }
 </style>
+<style>
+/* ---------- home ---------- */
+.fr{position:relative;height:720px;overflow:hidden;color:var(--on-dark);display:flex;align-items:flex-end;padding:0 var(--mr) 40px var(--m)}
+.fr>img{position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover;will-change:transform;transition:scale 1.6s var(--ease)}
+.fr::after{content:"";position:absolute;inset:0;background:rgb(0 0 0 / .2);pointer-events:none}
+.fr:hover>img{scale:1.03}
+.fr .in{position:relative;z-index:1;display:flex;flex-direction:column;gap:60px;width:100%}
+.fr .t{display:flex;flex-direction:column;gap:20px}
+.fr .eyebrow{color:var(--on-dark)}
+.fr h2{font-size:clamp(64px,7.8vw,112px);line-height:1;margin:12px 0 0;white-space:pre-line}
+.fr p{font-size:20px;line-height:1.55;margin:0;max-width:34em;white-space:pre-line}
+.btn-light{height:56px;padding:0 36px;display:inline-grid;place-items:center;background:var(--cream);color:var(--ink);position:relative;overflow:hidden;align-self:flex-start;min-width:262px}
+.btn-light span{position:relative;z-index:1;display:inline-flex;gap:12px;align-items:center}
+.btn-light::before{content:"";position:absolute;inset:0;background:var(--white);transform:translateY(101%);transition:transform .45s var(--ease)}
+.btn-light:hover::before{transform:none}
+.btn-line{height:56px;padding:0 36px;display:inline-grid;place-items:center;border:1px solid rgb(249 248 239 / .6);color:var(--on-dark);transition:background .3s,color .3s}
+.btn-line span{display:inline-flex;gap:12px;align-items:center}
+.btn-line:hover{background:var(--cream);color:var(--ink)}
+.set{display:grid;grid-template-columns:1fr 1fr;background:var(--footer);color:var(--on-dark);min-height:720px}
+.set .img{overflow:hidden;background:var(--ph)}
+.set .img img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.set:hover .img img{transform:scale(1.04)}
+.set .txt{display:flex;flex-direction:column;justify-content:space-between;padding:180px 96px 80px}
+.set h2{font-size:48px;line-height:1.15;margin:0 0 12px}
+.set p{font-size:20px;line-height:1.55;margin:0 0 24px;max-width:26em}
+.set .cta{display:flex;gap:12px;flex-wrap:wrap}
+.set .btn-light{min-width:0;align-self:auto}
+.dej{padding:120px 240px 0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:32px}
+.dej h2{font-size:40px;line-height:1.3;margin:0}
+.home-cards{grid-template-columns:repeat(5,1fr);padding-bottom:120px}
+.home-cards .pcard .img{aspect-ratio:250/320}
+@media (max-width:1100px){.dej{padding-inline:96px}.home-cards{grid-template-columns:repeat(3,1fr)}.set .txt{padding:96px 48px 48px}}
+@media (max-width:760px){
+  .fr{height:min(150vw,640px);padding-bottom:32px}
+  .fr .in{gap:32px}.fr p{font-size:16px;white-space:normal}
+  .set{grid-template-columns:1fr}.set .img{aspect-ratio:1}.set .txt{padding:48px var(--mr) 56px var(--m);gap:40px}
+  .set h2{font-size:36px}.set p{font-size:16px}
+  .dej{padding:72px var(--mr) 0 var(--m)}.dej h2{font-size:28px}
+  .home-cards{grid-template-columns:repeat(2,1fr);padding-bottom:64px}
+}
+</style>
 
+
+</head>
+<body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-left" viewBox="0 0 24 24"><path d="M20 12H4M10 6l-6 6 6 6"/></symbol>
   <symbol id="i-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
@@ -277,7 +321,7 @@ footer .bottom div{display:flex;gap:32px}
       <a href="#">Déjeuner dînatoire</a>
     </nav>
     <button class="burger" aria-label="Menu"><svg class="icon"><use href="#i-menu"/></svg></button>
-    <a href="#" class="logo" aria-label="House of Horani, home"></a>
+    <a href="index.html" class="logo" aria-label="House of Horani, home"></a>
     <nav class="right ui" aria-label="Account">
       <a href="#" class="hide-sm">About</a>
       <a href="#" class="hide-sm">Account</a>
@@ -292,150 +336,85 @@ footer .bottom div{display:flex;gap:32px}
       <a href="#">Bag (<span class="bagcount" id="bagCount">1</span>)</a>
     </nav>
   </div>
-  <div class="crumbs"><a href="#">Home</a><span>/</span><a href="#">Fragrances</a><span>/</span><b>Bois Mira</b></div>
 </header>
 
 <main>
-  <!-- hero -->
-  <section class="hero" id="hero">
-    <div class="track" id="track">
-      <figure><img class="zoom-in" src="img/hero-1.jpg" alt="Bois Mira bottle, 100 ml"></figure>
-      <figure><img class="zoom-in" src="img/hero-2.jpg" alt="Bois Mira spray, close-up"></figure>
-      <figure><img data-dark src="img/photo-2.jpg" alt="Model holding Bois Mira to her cheek"></figure>
-      <figure><img data-dark src="img/photo-1.jpg" alt="Model with Bois Mira, head tilted back"></figure>
-      <figure><img data-dark src="img/mood.jpg" alt="Late-night scene with Bois Mira"></figure>
+  <section class="fr" id="hero">
+    <img data-dark data-par="0.12" src="img/home-baryshnikova.jpg" alt="">
+    <div class="in rv">
+      <div class="t"><div><div class="eyebrow">#01</div><h2 class="display">Baryshnikova</h2></div><p>Dark oud and amber leave a creamy trail that
+stays past the last waltz.</p></div>
+      <a href="bois-mira.html" class="btn-light ui" aria-label="Discover Baryshnikova"><span>Discover the fragrance <svg class="icon" style="width:16px;height:16px"><use href="#i-right"/></svg></span></a>
     </div>
-    <div class="ctrl">
-      <button class="arrow a-prev" id="prev" aria-label="Previous photo"><svg class="icon"><use href="#i-left"/></svg></button>
-      <button class="arrow a-next" id="next" aria-label="Next photo"><svg class="icon"><use href="#i-right"/></svg></button>
-      <div class="progress" aria-hidden="true"><i id="prog"></i></div>
+  </section>
+  <section class="fr">
+    <img data-dark data-par="0.12" src="img/home-ambre-rouge.jpg" alt="" loading="lazy">
+    <div class="in rv">
+      <div class="t"><div><div class="eyebrow">#02</div><h2 class="display">Ambre
+Rouge</h2></div><p>Aged rum and amber in a golden cloud,
+lit by bergamot and saffron.</p></div>
+      <a href="bois-mira.html" class="btn-light ui" aria-label="Discover Ambre Rouge"><span>Discover the fragrance <svg class="icon" style="width:16px;height:16px"><use href="#i-right"/></svg></span></a>
     </div>
+  </section>
+  <section class="fr">
+    <img data-dark data-par="0.12" src="img/home-bois-mira.jpg" alt="" loading="lazy">
+    <div class="in rv">
+      <div class="t"><div><div class="eyebrow">#03</div><h2 class="display">Bois Mira</h2></div><p>Late night, loud music, the door swings open:
+passion fruit and saffron collide with rose and leather.</p></div>
+      <a href="bois-mira.html" class="btn-light ui" aria-label="Discover Bois Mira"><span>Discover the fragrance <svg class="icon" style="width:16px;height:16px"><use href="#i-right"/></svg></span></a>
+    </div>
+  </section>
+  <section class="fr">
+    <img data-dark data-par="0.12" src="img/home-fleur-zubyan.jpg" alt="" loading="lazy">
+    <div class="in rv">
+      <div class="t"><div><div class="eyebrow">#04</div><h2 class="display">Fleur
+Zubyān</h2></div><p>Velvet, smoke and crimson rose: cassis and pink
+pepper flash open over orris and violet.</p></div>
+      <a href="bois-mira.html" class="btn-light ui" aria-label="Discover Fleur Zubyān"><span>Discover the fragrance <svg class="icon" style="width:16px;height:16px"><use href="#i-right"/></svg></span></a>
+    </div>
+  </section>
+  <section class="fr">
+    <img data-dark data-par="0.12" src="img/home-oud-ethalon.jpg" alt="" loading="lazy">
+    <div class="in rv">
+      <div class="t"><div><div class="eyebrow">#05</div><h2 class="display">Oud
+Ethalon</h2></div><p>The last hour of the gala: black pepper and cardamom
+over weathered leather and rose.</p></div>
+      <a href="bois-mira.html" class="btn-light ui" aria-label="Discover Oud Ethalon"><span>Discover the fragrance <svg class="icon" style="width:16px;height:16px"><use href="#i-right"/></svg></span></a>
+    </div>
+  </section>
 
-    <div class="card" id="card">
-      <div>
-        <div class="meta">
-          <span class="eyebrow">Extrait de Parfum</span>
-          <div class="icons">
-            <button id="shareBtn" aria-label="Share" aria-expanded="false"><svg class="icon"><use href="#i-share"/></svg></button>
-            <button id="wishBtn" aria-label="Add to wishlist" aria-pressed="false"><svg class="icon heart" id="cardHeart"><use href="#i-heart"/></svg></button>
-            <div class="tooltip" id="tooltip" role="menu">
-              <button>Facebook</button><button>Pinterest</button><button>WhatsApp</button><button id="copyLink">Copy link</button>
-            </div>
-          </div>
-        </div>
-        <h1 class="display">Bois Mira</h1>
-        <div class="price">79.90 €</div>
+  <section class="set">
+    <div class="img"><img src="img/home-set.jpg" alt="Discovery set: five 2 ml samples in a white box" loading="lazy"></div>
+    <div class="txt">
+      <div class="rv">
+        <h2 class="display">Try the whole collection</h2>
+        <p>5 × 2 ml samples and a fragrance card. The best way to find your scent.</p>
+        <a href="#" class="link ui" data-soon>More about the set <svg class="icon"><use href="#i-right"/></svg></a>
       </div>
-      <div class="size"><span>100 ml / 3.4 fl oz</span></div>
-      <div class="actions">
-        <div class="stepper" aria-label="Quantity">
-          <button id="qMinus" aria-label="Decrease quantity"><svg class="icon" style="width:16px;height:16px"><use href="#i-minus"/></svg></button>
-          <span id="qty" aria-live="polite">1</span>
-          <button id="qPlus" aria-label="Increase quantity"><svg class="icon" style="width:16px;height:16px"><use href="#i-plus"/></svg></button>
-        </div>
-        <button class="btn ui" id="addBtn"><span>Add to bag</span></button>
+      <div class="cta rv">
+        <button class="btn-light ui" id="setAdd"><span>Add to bag</span></button>
+        <button class="btn-line ui" id="setWish" aria-pressed="false"><span><svg class="icon heart" id="setHeart" style="width:16px;height:16px"><use href="#i-heart"/></svg> Add to wishlist</span></button>
       </div>
     </div>
   </section>
 
-  <!-- details -->
-  <section class="details" id="details">
-    <div class="acc-wrap">
-      <div class="acc open">
-        <button class="head ui" aria-expanded="true">The scent <span class="pm"></span></button>
-        <div class="body"><div><div class="inner">
-          <p>Designed for the theatrical extravagance of La Grande Soirée, a collision of tropical neon brightness and raw, shadowy timber, Oud Passion defines the high-impact energy of black-tie nightlife. Formulated at 32% Extrait de Parfum, it creates an unforgettable, room-filling trail that refuses to fade.</p>
-          <p>The fragrance explodes with an intoxicating burst of tart passion fruit, sun-drenched dried fruits, and golden saffron. This luminous contrast plunges directly into an opulent heart of crimson rose, patchouli, velvety white flowers, and rugged leather.</p>
-        </div></div></div>
-      </div>
-      <div class="acc open">
-        <button class="head ui" aria-expanded="true">Olfactive pyramid <span class="pm"></span></button>
-        <div class="body"><div><dl class="inner rows">
-          <div><dt>Top</dt><dd>Passion Fruit, Dried Fruit, Saffron</dd></div>
-          <div><dt>Heart</dt><dd>Rose, Patchouli, Leather, White Flower</dd></div>
-          <div><dt>Base</dt><dd>Oud, Guaiacwood, Tonka Bean, Vanilla</dd></div>
-        </dl></div></div>
-      </div>
-      <div class="acc open">
-        <button class="head ui" aria-expanded="true">Characteristics <span class="pm"></span></button>
-        <div class="body"><div><dl class="inner rows">
-          <div><dt>Olfactive family</dt><dd>Woody – Fruity – Oud</dd></div>
-          <div><dt>Concentration</dt><dd>Extrait de Parfum, 32%</dd></div>
-          <div><dt>Volume</dt><dd>100 ml / 3.4 fl oz</dd></div>
-        </dl></div></div>
-      </div>
-      <div class="acc">
-        <button class="head ui" aria-expanded="false">How to wear <span class="pm"></span></button>
-        <div class="body"><div><div class="inner"><p>Spray once or twice onto pulse points — the neck, the wrists, behind the ears — from 15–20 cm. At 32% concentration a little goes a long way: do not rub the wrists together, let the scent settle on its own. It also lasts beautifully on hair and clothing; test delicate fabrics first.</p></div></div></div>
-      </div>
-      <div class="acc">
-        <button class="head ui" aria-expanded="false">Ingredients <span class="pm"></span></button>
-        <div class="body"><div><div class="inner"><p>Full ingredient list (INCI) as printed on the box — to be provided by House of Horani.</p></div></div></div>
-      </div>
-      <div class="acc">
-        <button class="head ui" aria-expanded="false">Delivery &amp; returns <span class="pm"></span></button>
-        <div class="body"><div><div class="inner"><p>Delivery in 3–12 business days depending on the region, tracked and insured. Unopened products can be returned within 14 days of delivery. Shipping zones, costs and the full returns policy are on the Customer care page.</p></div></div></div>
-      </div>
-    </div>
+  <section class="dej">
+    <div class="eyebrow">Déjeuner dînatoire</div>
+    <h2 class="display rv">An oud that feels like a long lunch on the Riviera — light, generous, unhurried.</h2>
+    <a href="#" class="link ui" data-soon>Read the story <svg class="icon"><use href="#i-right"/></svg></a>
   </section>
 
-  <div class="wide"><img data-dark data-par="0.18" src="img/wide.jpg" alt="Dancer in an orange-tree courtyard" loading="lazy"></div>
-
-  <!-- collection -->
   <div class="sec-head">
     <div><div class="eyebrow">The collection</div><h2 class="display">Five fragrances</h2></div>
-    <a href="#" class="link ui">View all <svg class="icon"><use href="#i-right"/></svg></a>
+    <a href="#" class="link ui" data-soon>View all <svg class="icon"><use href="#i-right"/></svg></a>
   </div>
-  <div class="cards">
-    <a href="#" class="pcard rv"><div class="img"><img src="img/card-ambre-rogue.jpg" alt="Ambre Rogue bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Ambre Rogue</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
-    <a href="#" class="pcard rv"><div class="img"><img src="img/card-fleur-zubyan.jpg" alt="Fleur Zubyān bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Fleur Zubyān</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
-    <a href="#hero" class="pcard rv"><div class="img"><img src="img/card-bois-mira.jpg" alt="Bois Mira bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Bois Mira</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
-    <a href="#" class="pcard rv"><div class="img"><img src="img/card-baryshnikova.jpg" alt="Miel Baryshnikova bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Baryshnikova</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
+  <div class="cards home-cards">
+    <a href="bois-mira.html" class="pcard rv"><div class="img"><img src="img/card-ambre-rogue.jpg" alt="Ambre Rogue bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Ambre Rogue</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
+    <a href="bois-mira.html" class="pcard rv"><div class="img"><img src="img/card-ambre-rogue.jpg" alt="Oud Ethalon bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Oud Ethalon</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
+    <a href="bois-mira.html" class="pcard rv"><div class="img"><img src="img/card-fleur-zubyan.jpg" alt="Fleur Zubyān bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Fleur Zubyān</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
+    <a href="bois-mira.html" class="pcard rv"><div class="img"><img src="img/card-bois-mira.jpg" alt="Bois Mira bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Bois Mira</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
+    <a href="bois-mira.html" class="pcard rv"><div class="img"><img src="img/card-baryshnikova.jpg" alt="Baryshnikova bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Baryshnikova</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
   </div>
-
-  <!-- parallax photos -->
-  <section class="photos" id="photos" aria-label="Bois Mira, campaign photos">
-    <figure data-speed="-0.08"><img data-dark src="img/photo-1.jpg" alt="Model with Bois Mira, head tilted back" loading="lazy"></figure>
-    <figure data-speed="0.16"><img data-dark src="img/photo-2.jpg" alt="Model holding Bois Mira to her cheek" loading="lazy"></figure>
-  </section>
-
-  <!-- mood -->
-  <section class="mood">
-    <img data-dark data-par="0.12" src="img/mood-wide.jpg" alt="Model resting on a leather sofa" loading="lazy">
-    <div class="txt rv">
-      <div class="eyebrow">The mood</div>
-      <div class="ttl"><i></i><h2 class="display">La Grande Soirée</h2><i></i></div>
-      <p>Late night, loud music, the door swings open — and everyone turns. Tart passion fruit and golden saffron collide with crimson rose and raw leather, then settle into smoky oud and sweet tonka. Bright on arrival, deep long after the music stops.</p>
-    </div>
-  </section>
-
-  <!-- notes -->
-  <section class="notes">
-    <div class="eyebrow">Notes</div>
-    <h2 class="display">Key notes</h2>
-    <div class="tiers">
-      <div class="tier rv"><div class="circle"><img data-dark src="img/note-1.jpg" alt="" loading="lazy"></div><h3 class="display">Passion Fruit</h3><span class="eyebrow">Top</span><span class="list">Passion Fruit · Dried Fruit · Saffron</span><p>A bright burst of tart passion fruit and sun-dried fruit, lit by golden saffron.</p></div>
-      <div class="tier rv"><div class="circle"><img src="img/note-2.jpg" alt="" loading="lazy"></div><h3 class="display">Rose</h3><span class="eyebrow">Heart</span><span class="list">Rose · Patchouli · Leather · White Flower</span><p>Crimson rose and patchouli meet velvety white flowers and rugged leather.</p></div>
-      <div class="tier rv"><div class="circle"><img src="img/note-3.jpg" alt="" loading="lazy"></div><h3 class="display">Oud</h3><span class="eyebrow">Base</span><span class="list">Oud · Guaiacwood · Tonka Bean · Vanilla</span><p>Genuine oud and smoky guaiacwood, softened by sweet tonka bean and vanilla.</p></div>
-    </div>
-  </section>
-
-  <!-- in the box -->
-  <div class="box-head"><div class="eyebrow">What’s in the box</div><h2 class="display">In the box</h2></div>
-  <div class="box">
-    <figure class="rv"><div class="img"><img data-dark src="img/box-1.jpg" alt="Rigid box with the bottle inside" loading="lazy"></div><figcaption><h3 class="display">Rigid box</h3><span>Embossed border, horani-brown interior</span></figcaption></figure>
-    <figure class="rv"><div class="img"><img data-dark src="img/box-2.jpg" alt="Cotton dust bag on a wooden table" loading="lazy"></div><figcaption><h3 class="display">Dust bag</h3><span>Natural cotton, drawstring</span></figcaption></figure>
-    <figure class="rv"><div class="img"><img src="img/box-3.jpg" alt="Fragrance card and envelope" loading="lazy"></div><figcaption><h3 class="display">Fragrance card</h3><span>Notes and story of the scent</span></figcaption></figure>
-  </div>
-
-  <!-- next -->
-  <a href="#" class="next">
-    <img data-dark data-par="0.2" src="img/next.jpg" alt="" loading="lazy">
-    <div class="in">
-      <span class="eyebrow">Next fragrance · 03 / 05</span>
-      <span class="t display">Ambre Rogue <svg class="icon"><use href="#i-right"/></svg></span>
-    </div>
-  </a>
 </main>
 
 <footer>
@@ -454,106 +433,55 @@ footer .bottom div{display:flex;gap:32px}
 
 <div class="toast" id="toast" role="status"></div>
 
+<div class="toast" id="toast" role="status"></div>
+
 <script>
 (()=>{
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const toast=(m)=>{const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2200);};
 
-/* header: transparent over hero, solid after */
+/* header: transparent over the first screen; items invert over dark content */
 const header=$('#header'), hero=$('#hero');
-/* invert header items over dark content: probe what lies under each zone */
-const zones=[...header.querySelectorAll('.bar>nav,.bar>.logo,.bar>.burger,.crumbs')];
+const zones=[...header.querySelectorAll('.bar>nav,.bar>.logo,.bar>.burger')];
 const lum=c=>{const m=c.match(/[\d.]+/g); if(!m||(m[3]!==undefined&&+m[3]<.5)) return null; return (.2126*m[0]+.7152*m[1]+.0722*m[2])/255;};
-const isDark=(x,y)=>{
-  for(const el of document.elementsFromPoint(x,y)){
-    if(header.contains(el)) continue;
-    if(el.tagName==='IMG') return el.hasAttribute('data-dark');
-    const l=lum(getComputedStyle(el).backgroundColor); if(l!==null) return l<.5;
-  }
-  return false;
-};
-const onHeader=()=>{
-  const past=scrollY > hero.offsetHeight-80; let any=false;
-  for(const z of zones){
-    const r=z.getBoundingClientRect(); if(!r.width||!r.height) continue;
-    const d=isDark(r.left+r.width/2, r.top+r.height/2); z.classList.toggle('inv',d); any=any||d;
-  }
-  header.classList.toggle("past",past); header.classList.toggle("solid", past && !any);
-};
+const isDark=(x,y)=>{for(const el of document.elementsFromPoint(x,y)){ if(header.contains(el)) continue; if(el.tagName==='IMG') return el.hasAttribute('data-dark'); const l=lum(getComputedStyle(el).backgroundColor); if(l!==null) return l<.5;} return false;};
+const onHeader=()=>{const past=scrollY>hero.offsetHeight-80; let any=false;
+  for(const z of zones){const r=z.getBoundingClientRect(); if(!r.width||!r.height) continue; const d=isDark(r.left+r.width/2,r.top+r.height/2); z.classList.toggle('inv',d); any=any||d;}
+  header.classList.toggle('past',past); header.classList.toggle('solid',past&&!any);};
 
-/* hero slider */
-const track=$('#track'); const N=track.children.length; let pos=0, busy=false; const prog=$('#prog');
-const perView=()=>matchMedia('(max-width:760px)').matches?1:2;
-const step=()=>100/perView();
-const setProg=()=>{prog.style.width=(100/N)+'%'; prog.style.left=(pos*100/N)+'%';};
-const jump=x=>{track.style.transition='none'; track.style.transform=`translate3d(${x}%,0,0)`; void track.offsetWidth; track.style.transition='';};
-const go=dir=>{
-  if(busy) return; busy=true; pos=(pos+dir+N)%N; setProg();
-  if(reduce){ if(dir>0) track.appendChild(track.firstElementChild); else track.prepend(track.lastElementChild); busy=false; return; }
-  if(dir>0){
-    track.style.transform=`translate3d(${-step()}%,0,0)`;
-    track.addEventListener('transitionend',function f(){track.removeEventListener('transitionend',f); track.appendChild(track.firstElementChild); jump(0); busy=false; onHeader();});
-  } else {
-    track.prepend(track.lastElementChild); jump(-step());
-    requestAnimationFrame(()=>{ track.style.transform='translate3d(0,0,0)'; });
-    track.addEventListener('transitionend',function f(){track.removeEventListener("transitionend",f); busy=false; onHeader();});
-  }
-};
-$('#next').onclick=()=>{go(1);restart();}; $('#prev').onclick=()=>{go(-1);restart();};
-let timer; const restart=()=>{clearInterval(timer); if(!reduce) timer=setInterval(()=>go(1),6000);}; restart(); setProg();
-let sx=null; hero.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});
-hero.addEventListener('touchend',e=>{if(sx==null)return;const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>40){go(d<0?1:-1);restart();}sx=null;});
+/* links to pages not built yet */
+$$('[data-soon]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();toast('This page is not in the prototype yet');}));
 
-/* quantity + bag */
-let q=1; const qEl=$('#qty');
-$('#qMinus').onclick=()=>{q=Math.max(1,q-1);qEl.textContent=q;};
-$('#qPlus').onclick=()=>{q=Math.min(9,q+1);qEl.textContent=q;};
-let bag=1; $('#addBtn').onclick=e=>{bag+=q;const c=$('#bagCount');c.textContent=bag;c.classList.add('bump');setTimeout(()=>c.classList.remove('bump'),300);
-  const b=e.currentTarget;b.classList.remove('added');void b.offsetWidth;b.classList.add('added');toast(`Bois Mira ×${q} added to bag`);};
-
-/* wishlist */
-const fav=()=>{const on=!$('#cardHeart').classList.contains('on');['#cardHeart','#hdrHeart'].forEach(s=>$(s).classList.toggle('on',on));$('#wishBtn').setAttribute('aria-pressed',on);toast(on?'Saved to wishlist':'Removed from wishlist');};
-$('#wishBtn').onclick=fav;
-
-/* share tooltip */
-const tip=$('#tooltip');
-$('#shareBtn').onclick=e=>{e.stopPropagation();const o=tip.classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',o);};
-$('#copyLink').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);toast('Link copied');}catch(_){toast('Copy is not available here');}tip.classList.remove('open');};
-tip.querySelectorAll('button:not(#copyLink)').forEach(b=>b.onclick=()=>{tip.classList.remove('open');toast(b.textContent+' — opens in the live site');});
+/* discovery set */
+let bag=1;
+$('#setAdd').onclick=()=>{bag++;const c=$('#bagCount');c.textContent=bag;c.classList.add('bump');setTimeout(()=>c.classList.remove('bump'),300);toast('Discovery set added to bag');};
+$('#setWish').onclick=e=>{const on=!$('#setHeart').classList.contains('on');['#setHeart','#hdrHeart'].forEach(s=>$(s).classList.toggle('on',on));e.currentTarget.setAttribute('aria-pressed',on);toast(on?'Saved to wishlist':'Removed from wishlist');};
 
 /* language */
 const lang=$('#lang');
 $('#langBtn').onclick=e=>{e.stopPropagation();const o=lang.classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',o);};
 lang.querySelectorAll('.menu button').forEach(b=>b.onclick=()=>{$('#langCode').textContent=b.dataset.l;lang.querySelectorAll('.menu button svg').forEach(s=>s.remove());b.insertAdjacentHTML('beforeend','<svg class="icon" style="width:16px;height:16px"><use href="#i-check"/></svg>');lang.classList.remove('open');});
-document.addEventListener('click',()=>{tip.classList.remove('open');lang.classList.remove('open');});
-
-/* accordions */
-$$('.acc .head').forEach(h=>h.onclick=()=>{const a=h.parentElement;const o=a.classList.toggle('open');h.setAttribute('aria-expanded',o);});
+document.addEventListener('click',()=>lang.classList.remove('open'));
 
 /* newsletter */
 $('#news').addEventListener('submit',e=>{e.preventDefault();toast('Thank you — you are on the list');e.target.reset();});
 
-/* reveal: elements below the first screen start slightly lower, slide in */
+/* reveal */
 const rv=$$('.rv');
 if(!reduce && 'IntersectionObserver' in window){
   rv.forEach(el=>{ if(el.getBoundingClientRect().top>innerHeight) el.classList.add('pre'); });
-  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ const el=e.target; const idx=[...el.parentElement.children].indexOf(el); el.style.transitionDelay=(idx%4)*90+'ms'; el.classList.remove('pre'); io.unobserve(el);} }),{rootMargin:'0px 0px -8% 0px'});
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ const el=e.target; const idx=[...el.parentElement.children].indexOf(el); el.style.transitionDelay=(idx%5)*90+'ms'; el.classList.remove('pre'); io.unobserve(el);} }),{rootMargin:'0px 0px -8% 0px'});
   rv.forEach(el=>io.observe(el));
 }
 
 /* parallax */
-const pars=$$('[data-par]'), photos=$('#photos'), figs=$$('#photos figure');
-const wideMQ=matchMedia('(min-width: 761px)');
-const tick=()=>{
-  onHeader();
-  if(reduce) return;
-  const vh=innerHeight;
-  pars.forEach(img=>{const r=img.parentElement.getBoundingClientRect(); if(r.bottom<0||r.top>vh) return; const p=(r.top+r.height/2-vh/2)/vh; img.style.transform=`translate3d(0,${(-p*img.dataset.par*100).toFixed(2)}%,0)`;});
-  if(wideMQ.matches){ const r=photos.getBoundingClientRect(); if(r.bottom>0&&r.top<vh){ const p=(r.top+r.height/2-vh/2); figs.forEach(f=>f.style.transform=`translate3d(0,${(p*f.dataset.speed).toFixed(1)}px,0)`);} }
-  else figs.forEach(f=>f.style.transform='');
-};
+const pars=$$('[data-par]');
+const tick=()=>{ onHeader(); if(reduce) return; const vh=innerHeight;
+  pars.forEach(img=>{const r=img.parentElement.getBoundingClientRect(); if(r.bottom<0||r.top>vh) return; const p=(r.top+r.height/2-vh/2)/vh; img.style.transform=`translate3d(0,${(-p*img.dataset.par*100).toFixed(2)}%,0)`;});};
 let raf=0; addEventListener('scroll',()=>{ if(!raf) raf=requestAnimationFrame(()=>{raf=0;tick();}); },{passive:true});
 addEventListener('resize',tick); tick();
 })();
 </script>
+</body>
+</html>
