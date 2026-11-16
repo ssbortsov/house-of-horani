@@ -21,7 +21,7 @@
 @media (min-width:900px){ :root{ --m:max(48px, env(safe-area-inset-left, 0px)); --mr:max(48px, env(safe-area-inset-right, 0px)); } }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--ink);font:400 14px/1.5 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--cream);color:var(--ink);font:400 14px/1.5 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--cream)}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
@@ -68,7 +68,7 @@ img{display:block;max-width:100%}
 }
 
 /* ---------- hero ---------- */
-.hero{position:relative;height:100vh;height:100svh;min-height:680px;overflow:hidden;background:var(--ph)}
+.hero{position:relative;height:720px;overflow:hidden;background:var(--ph)}
 .track{display:flex;height:100%;transition:transform 1s var(--ease);will-change:transform}
 .track figure{flex:0 0 50%;height:100%;margin:0;overflow:hidden}
 .track img{width:100%;height:100%;object-fit:cover}
@@ -225,7 +225,7 @@ footer .bottom div{display:flex;gap:32px}
 }
 @media (max-width:760px){
   .hero-wrap{display:block}
-  .hero{height:100vh;height:100svh;min-height:480px}
+  .hero{height:min(110vw,560px)}
   .track figure{flex-basis:100%}
   .ctrl{inset:0}
   .card{position:relative;left:auto;right:auto;top:auto;translate:none;width:auto;max-width:none;margin:0;padding:32px var(--mr) 40px var(--m)}
@@ -387,10 +387,10 @@ footer .bottom div{display:flex;gap:32px}
     <a href="#" class="link ui">View all <svg class="icon"><use href="#i-right"/></svg></a>
   </div>
   <div class="cards">
-    <a href="bois-mira.html" class="pcard rv"><div class="img"><img src="img/card-ambre-rogue.jpg" alt="Ambre Rogue bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Ambre Rogue</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
-    <a href="bois-mira.html" class="pcard rv"><div class="img"><img src="img/card-fleur-zubyan.jpg" alt="Fleur Zubyān bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Fleur Zubyān</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
-    <a href="bois-mira.html" class="pcard rv"><div class="img"><img src="img/card-bois-mira.jpg" alt="Bois Mira bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Bois Mira</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
-    <a href="bois-mira.html" class="pcard rv"><div class="img"><img src="img/card-baryshnikova.jpg" alt="Miel Baryshnikova bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Baryshnikova</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
+    <a href="baryshnikova.html" class="pcard rv"><div class="img"><img src="img/ba-1.jpg" alt="Baryshnikova bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Baryshnikova</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
+    <a href="ambre-rouge.html" class="pcard rv"><div class="img"><img src="img/ar-1.jpg" alt="Ambre Rouge bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Ambre Rouge</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
+    <a href="fleur-zubyan.html" class="pcard rv"><div class="img"><img src="img/fz-1.jpg" alt="Fleur Zubyān bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Fleur Zubyān</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
+    <a href="oud-ethalon.html" class="pcard rv"><div class="img"><img src="img/oe-1.jpg" alt="Oud Ethalon bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Oud Ethalon</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
   </div>
 
   <!-- parallax photos -->
@@ -429,11 +429,11 @@ footer .bottom div{display:flex;gap:32px}
   </div>
 
   <!-- next -->
-  <a href="bois-mira.html" class="next">
-    <img data-dark data-par="0.2" src="img/next.jpg" alt="" loading="lazy">
+  <a href="fleur-zubyan.html" class="next">
+    <img data-dark data-par="0.2" src="img/home-fleur-zubyan.jpg" alt="" loading="lazy">
     <div class="in">
-      <span class="eyebrow">Next fragrance · 03 / 05</span>
-      <span class="t display">Ambre Rogue <svg class="icon"><use href="#i-right"/></svg></span>
+      <span class="eyebrow">Next fragrance · 04 / 05</span>
+      <span class="t display">Fleur Zubyān <svg class="icon"><use href="#i-right"/></svg></span>
     </div>
   </a>
 </main>
