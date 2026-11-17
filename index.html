@@ -11,7 +11,7 @@
 /* Layout: 12-col desktop grid, 48 margins, 24 gutters; full-bleed photography, white product card floating on the hero. Single brand look (cream / horani-brown), not theme-switched. */
 :root{
   --u:1px;
-  --cream:#F9F8EF; --white:#FFFFFF; --brown:#553115; --ink:#3B2416; --muted:#8A7666; --line:#DDD5C7; --ph:#E8E1D6; --footer:#3B2416; --on-dark:#F9F8EF;
+  --cream:#F9F8EF; --white:#FFFFFF; --brown:#553115; --ink:#3B2416; --muted:#8A7666; --line:#DDD5C7; --ph:#E8E1D6; --footer:#3B2416; --gold:#F0B323; --gold-dk:#E0A417; --on-dark:#F9F8EF;
   --display:"Ibarra Real Nova", "Cormorant Garamond", Georgia, serif;
   --sans:"Onest", "Helvetica Neue", Arial, sans-serif;
   --m:max(calc(16 * var(--u)), env(safe-area-inset-left, 0px)); --mr:max(calc(16 * var(--u)), env(safe-area-inset-right, 0px));
@@ -96,9 +96,9 @@ img{display:block;max-width:100%}
 .actions{display:flex;gap:calc(12 * var(--u))}
 .stepper{display:flex;align-items:center;justify-content:space-between;width:calc(112 * var(--u));height:calc(56 * var(--u));border:1px solid var(--line);padding:0 calc(14 * var(--u));font-variant-numeric:tabular-nums}
 .stepper button{width:calc(20 * var(--u));height:calc(20 * var(--u));display:grid;place-items:center}
-.btn{height:calc(56 * var(--u));flex:1;display:grid;place-items:center;background:var(--brown);color:var(--on-dark);position:relative;overflow:hidden;transition:background .3s}
+.btn{height:calc(56 * var(--u));flex:1;display:grid;place-items:center;background:var(--gold);color:var(--ink);letter-spacing:.1em;position:relative;overflow:hidden;transition:background .3s}
 .btn span{position:relative;z-index:1;transition:transform .35s var(--ease)}
-.btn::before{content:"";position:absolute;inset:0;background:var(--ink);transform:translateY(101%);transition:transform .45s var(--ease)}
+.btn::before{content:"";position:absolute;inset:0;background:var(--gold-dk);transform:translateY(101%);transition:transform .45s var(--ease)}
 .btn:hover::before{transform:none}
 .btn.added span{animation:pop .5s var(--ease)}
 @keyframes pop{50%{transform:translateY(calc(-3 * var(--u)))}}
@@ -204,18 +204,19 @@ img{display:block;max-width:100%}
 .next:hover .t svg{transform:translateX(calc(12 * var(--u)))}
 
 /* ---------- footer ---------- */
-footer{background:var(--footer);color:var(--on-dark);padding:calc(40 * var(--u)) var(--mr) calc(16 * var(--u)) var(--m)}
+footer{background:var(--gold);color:var(--ink);padding:calc(40 * var(--u)) var(--mr) calc(16 * var(--u)) var(--m);display:flex;flex-direction:column;gap:calc(80 * var(--u))}
 footer .top{display:flex;justify-content:space-between;align-items:center}
-footer .flogo{width:calc(200 * var(--u));aspect-ratio:250/24;background:currentColor;-webkit-mask:var(--logo) left/contain no-repeat;mask:var(--logo) left/contain no-repeat}
-footer .mid{display:grid;grid-template-columns:4fr 2fr 2fr 2fr;gap:calc(24 * var(--u));padding:calc(80 * var(--u)) 0}
-footer .news h4{font-family:var(--display);font-weight:600;font-variant-caps:small-caps;font-size:calc(24 * var(--u));line-height:1.2;margin:0 0 calc(56 * var(--u));max-width:22ch}
-footer form{display:flex;border-bottom:1px solid rgb(249 248 239 / .5);padding-bottom:calc(12 * var(--u));max-width:calc(432 * var(--u))}
-footer input{flex:1;min-width:0;background:none;border:0;color:var(--on-dark);font:400 calc(14 * var(--u)) var(--sans);outline:none}
-footer input::placeholder{color:rgb(249 248 239 / .55)}
-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:calc(12 * var(--u))}
-footer ul a{opacity:.85;transition:opacity .2s}footer ul a:hover{opacity:1}
-footer .bottom{display:flex;justify-content:space-between;gap:calc(24 * var(--u));border-top:1px solid rgb(249 248 239 / .2);padding-top:calc(24 * var(--u))}
-footer .bottom div{display:flex;gap:calc(32 * var(--u))}
+footer .flogo{width:calc(250 * var(--u));aspect-ratio:250/24;background:currentColor;-webkit-mask:var(--logo) left/contain no-repeat;mask:var(--logo) left/contain no-repeat}
+footer .mid{display:grid;grid-template-columns:calc(480 * var(--u)) 1fr 1fr 1fr;gap:calc(48 * var(--u))}
+footer .news{display:flex;flex-direction:column;justify-content:space-between;gap:calc(40 * var(--u));min-height:calc(191 * var(--u))}
+footer .news h4{font-family:var(--display);font-weight:600;font-variant-caps:small-caps;font-size:calc(24 * var(--u));line-height:1.3;letter-spacing:-.02em;margin:0}
+footer form{display:flex;align-items:center;border-bottom:1px solid var(--ink);padding:calc(16 * var(--u)) 0}
+footer input{flex:1;min-width:0;background:none;border:0;color:var(--ink);font:400 calc(14 * var(--u))/1.5 var(--sans);outline:none}
+footer input::placeholder{color:var(--brown);opacity:1}
+footer ul{list-style:none;margin:0;padding:0;display:grid;align-content:start;gap:calc(16 * var(--u))}
+footer ul a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .35s var(--ease)}footer ul a:hover{background-size:100% 1px}
+footer .bottom{display:flex;justify-content:space-between;align-items:center;gap:calc(24 * var(--u));border-top:1px solid var(--ink);padding-top:calc(16 * var(--u))}
+footer .bottom div{display:flex;gap:calc(32 * var(--u))}footer .bottom a{padding:calc(12 * var(--u)) calc(12 * var(--u)) calc(12 * var(--u)) 0}
 
 /* scroll reveal: transform only, content readable at rest */
 .rv{transition:transform 1.1s var(--ease)}
@@ -248,9 +249,11 @@ footer .bottom div{display:flex;gap:calc(32 * var(--u))}
   .box-head{padding-top:calc(64 * var(--u))}
   .next{height:calc(360 * var(--u))}
   .next .t{gap:calc(16 * var(--u))}.next .t svg{width:calc(36 * var(--u));height:calc(36 * var(--u))}
-  footer .mid{grid-template-columns:1fr 1fr;padding:calc(48 * var(--u)) 0}
+  footer{gap:calc(48 * var(--u))}
+  footer .mid{grid-template-columns:1fr 1fr;gap:calc(40 * var(--u)) calc(24 * var(--u))}
+  footer .news{min-height:0}
   footer .news{grid-column:1 / -1}
-  footer .bottom{flex-direction:column}
+  footer .bottom{flex-direction:column;align-items:flex-start;gap:0}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -268,11 +271,11 @@ footer .bottom div{display:flex;gap:calc(32 * var(--u))}
 .fr .eyebrow{color:var(--on-dark)}
 .fr h2{font-size:clamp(calc(64 * var(--u)),7.8vw,calc(112 * var(--u)));line-height:1;margin:calc(12 * var(--u)) 0 0;white-space:pre-line}
 .fr p{font-size:calc(20 * var(--u));line-height:1.55;margin:0;max-width:34em;white-space:pre-line}
-.btn-light{height:calc(56 * var(--u));padding:0 calc(36 * var(--u));display:inline-grid;place-items:center;background:var(--cream);color:var(--ink);position:relative;overflow:hidden;align-self:flex-start;min-width:calc(262 * var(--u))}
+.btn-light{height:calc(56 * var(--u));padding:0 calc(36 * var(--u));display:inline-grid;place-items:center;background:var(--cream);color:var(--brown);letter-spacing:.1em;position:relative;overflow:hidden;align-self:flex-start}
 .btn-light span{position:relative;z-index:1;display:inline-flex;gap:calc(12 * var(--u));align-items:center}
 .btn-light::before{content:"";position:absolute;inset:0;background:var(--white);transform:translateY(101%);transition:transform .45s var(--ease)}
 .btn-light:hover::before{transform:none}
-.btn-line{height:calc(56 * var(--u));padding:0 calc(36 * var(--u));display:inline-grid;place-items:center;border:1px solid rgb(249 248 239 / .6);color:var(--on-dark);transition:background .3s,color .3s}
+.btn-line{height:calc(56 * var(--u));padding:0 calc(36 * var(--u));display:inline-grid;place-items:center;border:1px solid var(--on-dark);color:var(--on-dark);letter-spacing:.1em;transition:background .3s,color .3s}
 .btn-line span{display:inline-flex;gap:calc(12 * var(--u));align-items:center}
 .btn-line:hover{background:var(--cream);color:var(--ink)}
 .set{display:grid;grid-template-columns:1fr 1fr;background:var(--footer);color:var(--on-dark);min-height:calc(720 * var(--u))}
@@ -283,7 +286,8 @@ footer .bottom div{display:flex;gap:calc(32 * var(--u))}
 .set h2{font-size:calc(48 * var(--u));line-height:1.15;margin:0 0 calc(12 * var(--u))}
 .set p{font-size:calc(20 * var(--u));line-height:1.55;margin:0 0 calc(24 * var(--u));max-width:26em}
 .set .cta{display:flex;gap:calc(12 * var(--u));flex-wrap:wrap}
-.set .btn-light{min-width:0;align-self:auto}
+.set .btn{flex:none;display:inline-grid;padding:0 calc(36 * var(--u))}
+.set .heart.on path{fill:var(--on-dark);stroke:var(--on-dark)}
 .dej{padding:calc(120 * var(--u)) calc(240 * var(--u)) 0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:calc(32 * var(--u))}
 .dej h2{font-size:calc(40 * var(--u));line-height:1.3;margin:0}
 .home-cards{grid-template-columns:repeat(5,1fr);padding-bottom:calc(120 * var(--u))}
@@ -347,7 +351,7 @@ footer .bottom div{display:flex;gap:calc(32 * var(--u))}
     <div class="in rv">
       <div class="t"><div><div class="eyebrow">#01</div><h2 class="display">Baryshnikova</h2></div><p>Dark oud and amber leave a creamy trail that
 stays past the last waltz.</p></div>
-      <a href="baryshnikova.html" class="btn-light ui" aria-label="Discover Baryshnikova"><span>Discover the fragrance <svg class="icon" style="width:calc(16 * var(--u));height:calc(16 * var(--u))"><use href="#i-right"/></svg></span></a>
+      <a href="baryshnikova.html" class="btn-light ui" aria-label="Discover Baryshnikova"><span>Discover the fragrance</span></a>
     </div>
   </section>
   <section class="fr">
@@ -356,7 +360,7 @@ stays past the last waltz.</p></div>
       <div class="t"><div><div class="eyebrow">#02</div><h2 class="display">Ambre
 Rouge</h2></div><p>Aged rum and amber in a golden cloud,
 lit by bergamot and saffron.</p></div>
-      <a href="ambre-rouge.html" class="btn-light ui" aria-label="Discover Ambre Rouge"><span>Discover the fragrance <svg class="icon" style="width:calc(16 * var(--u));height:calc(16 * var(--u))"><use href="#i-right"/></svg></span></a>
+      <a href="ambre-rouge.html" class="btn-light ui" aria-label="Discover Ambre Rouge"><span>Discover the fragrance</span></a>
     </div>
   </section>
   <section class="fr">
@@ -364,7 +368,7 @@ lit by bergamot and saffron.</p></div>
     <div class="in rv">
       <div class="t"><div><div class="eyebrow">#03</div><h2 class="display">Bois Mira</h2></div><p>Late night, loud music, the door swings open:
 passion fruit and saffron collide with rose and leather.</p></div>
-      <a href="bois-mira.html" class="btn-light ui" aria-label="Discover Bois Mira"><span>Discover the fragrance <svg class="icon" style="width:calc(16 * var(--u));height:calc(16 * var(--u))"><use href="#i-right"/></svg></span></a>
+      <a href="bois-mira.html" class="btn-light ui" aria-label="Discover Bois Mira"><span>Discover the fragrance</span></a>
     </div>
   </section>
   <section class="fr">
@@ -373,7 +377,7 @@ passion fruit and saffron collide with rose and leather.</p></div>
       <div class="t"><div><div class="eyebrow">#04</div><h2 class="display">Fleur
 Zubyān</h2></div><p>Velvet, smoke and crimson rose: cassis and pink
 pepper flash open over orris and violet.</p></div>
-      <a href="fleur-zubyan.html" class="btn-light ui" aria-label="Discover Fleur Zubyān"><span>Discover the fragrance <svg class="icon" style="width:calc(16 * var(--u));height:calc(16 * var(--u))"><use href="#i-right"/></svg></span></a>
+      <a href="fleur-zubyan.html" class="btn-light ui" aria-label="Discover Fleur Zubyān"><span>Discover the fragrance</span></a>
     </div>
   </section>
   <section class="fr">
@@ -382,7 +386,7 @@ pepper flash open over orris and violet.</p></div>
       <div class="t"><div><div class="eyebrow">#05</div><h2 class="display">Oud
 Ethalon</h2></div><p>The last hour of the gala: black pepper and cardamom
 over weathered leather and rose.</p></div>
-      <a href="oud-ethalon.html" class="btn-light ui" aria-label="Discover Oud Ethalon"><span>Discover the fragrance <svg class="icon" style="width:calc(16 * var(--u));height:calc(16 * var(--u))"><use href="#i-right"/></svg></span></a>
+      <a href="oud-ethalon.html" class="btn-light ui" aria-label="Discover Oud Ethalon"><span>Discover the fragrance</span></a>
     </div>
   </section>
 
@@ -391,12 +395,12 @@ over weathered leather and rose.</p></div>
     <div class="txt">
       <div class="rv">
         <h2 class="display">Try the whole collection</h2>
-        <p>5 × 2 ml samples and a fragrance card. The best way to find your scent.</p>
+        <p>5 × 2 ml samples and a fragrance card.<br>The best way to find your scent.</p>
         <a href="#" class="link ui" data-soon>More about the set <svg class="icon"><use href="#i-right"/></svg></a>
       </div>
       <div class="cta rv">
-        <button class="btn-light ui" id="setAdd"><span>Add to bag</span></button>
-        <button class="btn-line ui" id="setWish" aria-pressed="false"><span><svg class="icon heart" id="setHeart" style="width:calc(16 * var(--u));height:calc(16 * var(--u))"><use href="#i-heart"/></svg> Add to wishlist</span></button>
+        <button class="btn ui" id="setAdd"><span>Add to bag</span></button>
+        <button class="btn-line ui" id="setWish" aria-pressed="false"><span>Add to wishlist <svg class="icon heart" id="setHeart" style="width:calc(16 * var(--u));height:calc(16 * var(--u))"><use href="#i-heart"/></svg></span></button>
       </div>
     </div>
   </section>
@@ -415,17 +419,17 @@ over weathered leather and rose.</p></div>
     <a href="ambre-rouge.html" class="pcard rv"><div class="img"><img src="img/ar-1.jpg" alt="Ambre Rouge bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Ambre Rouge</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
     <a href="oud-ethalon.html" class="pcard rv"><div class="img"><img src="img/oe-1.jpg" alt="Oud Ethalon bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Oud Ethalon</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
     <a href="fleur-zubyan.html" class="pcard rv"><div class="img"><img src="img/fz-1.jpg" alt="Fleur Zubyān bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Fleur Zubyān</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
-    <a href="bois-mira.html" class="pcard rv"><div class="img"><img src="img/card-bois-mira.jpg" alt="Bois Mira bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Bois Mira</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
+    <a href="bois-mira.html" class="pcard rv"><div class="img"><img src="img/bm-1.jpg" alt="Bois Mira bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Bois Mira</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
     <a href="baryshnikova.html" class="pcard rv"><div class="img"><img src="img/ba-1.jpg" alt="Baryshnikova bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Baryshnikova</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
   </div>
 </main>
 
 <footer>
-  <div class="top"><div class="flogo" role="img" aria-label="House of Horani"></div><a href="#" class="link ui">Instagram <svg class="icon" style="width:calc(14 * var(--u));height:calc(14 * var(--u))"><use href="#i-upright"/></svg></a></div>
+  <div class="top"><div class="flogo" role="img" aria-label="House of Horani"></div><a href="#" class="link ui">Instagram <svg class="icon" style="width:calc(12 * var(--u));height:calc(12 * var(--u))"><use href="#i-upright"/></svg></a></div>
   <div class="mid">
     <div class="news">
       <h4>New fragrances, private previews and stories from the House.</h4>
-      <form id="news"><label for="email" class="eyebrow" hidden>Email address</label><input id="email" type="email" placeholder="Email address" required><button class="ui link">Subscribe <svg class="icon" style="width:calc(14 * var(--u));height:calc(14 * var(--u))"><use href="#i-right"/></svg></button></form>
+      <form id="news"><label for="email" class="eyebrow" hidden>Email address</label><input id="email" type="email" placeholder="Email address" required><button class="ui link">Subscribe <svg class="icon" style="width:calc(12 * var(--u));height:calc(12 * var(--u))"><use href="#i-right"/></svg></button></form>
     </div>
     <ul><li><a href="#">Concept</a></li><li><a href="#">Fragrances</a></li><li><a href="#">Discovery Set</a></li><li><a href="#">Déjeuner dînatoire</a></li><li><a href="#">About</a></li></ul>
     <ul><li><a href="#">Shipping &amp; returns</a></li><li><a href="#">FAQ</a></li><li><a href="#">Contact</a></li><li><a href="#">Account</a></li></ul>
