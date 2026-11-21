@@ -32,6 +32,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
 img{display:block;max-width:100%}
+picture{display:contents}
 :focus-visible{outline:1px solid var(--brown);outline-offset:calc(3 * var(--u))}
 .eyebrow{font:400 calc(12 * var(--u))/1.2 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .ui{font:400 calc(12 * var(--u))/1 var(--sans);letter-spacing:.08em;text-transform:uppercase}
@@ -231,32 +232,66 @@ footer .bottom div{display:flex;gap:calc(32 * var(--u))}footer .bottom a{padding
   .cards{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:760px){
-  .hero-wrap{display:block}
-  .hero{height:min(110vw,calc(560 * var(--u)))}
-  .track figure{flex-basis:100%}
-  .ctrl{inset:0}
-  .card{position:relative;left:auto;right:auto;top:auto;translate:none;width:auto;max-width:none;margin:0;padding:calc(32 * var(--u)) var(--mr) calc(40 * var(--u)) var(--m)}
-  .details{display:block;padding-top:calc(48 * var(--u))}
+  /* header: solid cream bar 56 + breadcrumbs 29 in flow (Figma mobile 375) */
+  .header{background:var(--cream)}
+  .header .bar{height:calc(56 * var(--u))}
+  .header .inv,.header .inv b,.header .logo.inv{color:inherit}
+  .header .logo.inv{color:var(--brown)}
+  .header .bar{grid-template-columns:calc(88 * var(--u)) 1fr calc(88 * var(--u))}
+  .header .logo{width:calc(150 * var(--u))}
+  .header nav.right{gap:calc(16 * var(--u))}
+  .crumbs{height:calc(29 * var(--u));gap:calc(8 * var(--u));align-items:flex-start;padding-bottom:calc(12 * var(--u))}
+  main{padding-top:calc(85 * var(--u))}
+  /* hero: 412 slider, product card below */
+  .hero{height:auto;overflow:hidden;background:none}
+  .track{height:calc(412 * var(--u))}
+  .track figure{flex-basis:100%;background:var(--ph)}
+  .ctrl{inset:0 0 auto 0;height:calc(412 * var(--u))}
+  .hero .arrow.a-prev{left:calc(6 * var(--u))}.hero .arrow.a-next{right:calc(6 * var(--u))}
+  .hero .arrow .icon{width:calc(24 * var(--u));height:calc(24 * var(--u))}
+  .progress{bottom:calc(22 * var(--u));width:calc(120 * var(--u))}
+  .card{position:relative;left:auto;right:auto;top:auto;translate:none;width:auto;max-width:none;margin:0;gap:calc(24 * var(--u));padding:calc(32 * var(--u)) var(--mr) calc(40 * var(--u)) var(--m);animation:none}
+  .details{display:block;padding:calc(16 * var(--u)) var(--mr) calc(48 * var(--u)) var(--m)}
   .wide{height:calc(420 * var(--u))}
-  .sec-head{flex-direction:column;align-items:flex-start;padding-top:calc(64 * var(--u))}
-  .sec-head h2,.mood h2,.notes h2,.box-head h2{font-size:calc(36 * var(--u))}
-  .cards{gap:calc(16 * var(--u));padding-bottom:calc(64 * var(--u))}
-  .photos{height:auto;display:grid;grid-template-columns:1fr 1fr}
-  .photos figure{position:relative;width:auto;height:calc(280 * var(--u));left:auto!important;right:auto!important;top:auto!important}
-  .photos figure:last-child{margin-top:calc(48 * var(--u))}
-  .mood{height:auto}
-  .mood>img{position:relative;top:0;height:calc(420 * var(--u))}
-  .mood .txt{position:relative;left:auto;right:auto;top:auto;translate:none;width:auto;max-width:none;padding:calc(40 * var(--u)) var(--mr) 0 var(--m)}
-  .tiers{grid-template-columns:1fr;gap:calc(48 * var(--u))}
-  .box{grid-template-columns:1fr}
-  .box-head{padding-top:calc(64 * var(--u))}
+  /* section headings */
+  .sec-head{flex-direction:column;align-items:flex-start;gap:calc(16 * var(--u));padding:calc(64 * var(--u)) var(--mr) calc(24 * var(--u)) var(--m)}
+  .sec-head .link{padding:calc(12 * var(--u)) calc(12 * var(--u)) calc(12 * var(--u)) 0}
+  .sec-head h2,.mood h2,.notes h2,.box-head h2{font-size:calc(32 * var(--u));line-height:1.3;letter-spacing:-.01em}
+  .box-head{padding:calc(64 * var(--u)) var(--mr) calc(24 * var(--u)) var(--m)}
+  /* horizontal carousels: collection + in the box */
+  .cards,.box{display:flex;gap:calc(16 * var(--u));overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:var(--m);scrollbar-width:none;padding:0 var(--mr) calc(64 * var(--u)) var(--m)}
+  .cards::-webkit-scrollbar,.box::-webkit-scrollbar{display:none}
+  .pcard,.box figure{flex:none;scroll-snap-align:start}
+  .pcard{width:calc(240 * var(--u))}
+  .pcard .img{aspect-ratio:auto;height:calc(320 * var(--u))}
+  .box figure{width:calc(280 * var(--u))}
+  .box .img{aspect-ratio:1}
+  /* photos: staggered, full height 400 */
+  .photos{height:auto;display:block;padding-top:calc(24 * var(--u));margin-bottom:calc(48 * var(--u))}
+  .photos figure{position:relative;width:auto;height:calc(400 * var(--u));left:auto!important;right:auto!important;top:auto!important}
+  .photos figure:first-child{margin-right:calc(40 * var(--u))}
+  .photos figure:last-child{margin-left:calc(40 * var(--u))}
+  /* mood: image behind, text card at the bottom */
+  .mood{height:auto;padding:calc(320 * var(--u)) calc(20 * var(--u)) calc(20 * var(--u))}
+  .mood .txt{position:relative;left:auto;right:auto;top:auto;translate:none;width:auto;max-width:none;padding:calc(32 * var(--u)) calc(24 * var(--u))}
+  /* key notes */
+  .notes{background:var(--white);padding:calc(100 * var(--u)) var(--mr) calc(60 * var(--u)) var(--m)}
+  .tiers{grid-template-columns:1fr;gap:calc(60 * var(--u))}
+  .tier{gap:calc(16 * var(--u))}
+  .tier h3{margin:0}
+  .tier p{max-width:none}
+  /* next fragrance */
   .next{height:calc(360 * var(--u))}
-  .next .t{gap:calc(16 * var(--u))}.next .t svg{width:calc(36 * var(--u));height:calc(36 * var(--u))}
-  footer{gap:calc(48 * var(--u))}
-  footer .mid{grid-template-columns:1fr 1fr;gap:calc(40 * var(--u)) calc(24 * var(--u))}
-  footer .news{min-height:0}
-  footer .news{grid-column:1 / -1;order:-1}
-  footer .bottom{flex-direction:column;align-items:flex-start;gap:0}
+  .next::after{background:rgb(0 0 0 / .25)}
+  .next .t{gap:calc(16 * var(--u));font-size:calc(32 * var(--u));line-height:1.3}
+  .next .t svg{width:calc(24 * var(--u));height:calc(24 * var(--u));stroke-width:1.5}
+  /* footer */
+  footer{gap:calc(48 * var(--u));padding:calc(40 * var(--u)) var(--mr) calc(16 * var(--u)) var(--m)}
+  footer .flogo{width:calc(160 * var(--u))}
+  footer .mid{grid-template-columns:1fr 1fr;gap:calc(40 * var(--u)) calc(16 * var(--u))}
+  footer .news{grid-column:1 / -1;order:-1;min-height:0;gap:0}
+  footer .bottom{flex-direction:column;align-items:flex-start;gap:calc(8 * var(--u));border-top-color:var(--ink);padding-top:calc(24 * var(--u))}
+  footer .bottom div{gap:calc(24 * var(--u))}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -308,7 +343,7 @@ footer .bottom div{display:flex;gap:calc(32 * var(--u))}footer .bottom a{padding
   <!-- hero -->
   <section class="hero" id="hero">
     <div class="track" id="track">
-      <figure><img src="img/ar-1.jpg" alt="Ambre Rouge bottle, 100 ml"></figure>
+      <figure><picture><source media="(max-width:760px)" srcset="img/ar-cut.webp"><img src="img/ar-1.jpg" alt="Ambre Rouge bottle, 100 ml"></picture></figure>
       <figure><img src="img/ar-2.jpg" alt="Ambre Rouge spray, close-up"></figure>
       <figure><img data-dark src="img/ar-3.jpg" alt="Ambre Rouge, key ingredients"></figure>
     </div>
@@ -394,10 +429,10 @@ footer .bottom div{display:flex;gap:calc(32 * var(--u))}footer .bottom a{padding
     <a href="#" class="link ui">View all <svg class="icon"><use href="#i-right"/></svg></a>
   </div>
   <div class="cards">
-    <a href="baryshnikova.html" class="pcard rv"><div class="img"><img src="img/ba-1.jpg" alt="Baryshnikova bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Baryshnikova</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
-    <a href="bois-mira.html" class="pcard rv"><div class="img"><img src="img/bm-1.jpg" alt="Bois Mira bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Bois Mira</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
-    <a href="fleur-zubyan.html" class="pcard rv"><div class="img"><img src="img/fz-1.jpg" alt="Fleur Zubyān bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Fleur Zubyān</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
-    <a href="oud-ethalon.html" class="pcard rv"><div class="img"><img src="img/oe-1.jpg" alt="Oud Ethalon bottle" loading="lazy"><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Oud Ethalon</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
+    <a href="baryshnikova.html" class="pcard rv"><div class="img"><picture><source media="(max-width:760px)" srcset="img/ba-cut.webp"><img src="img/ba-1.jpg" alt="Baryshnikova bottle" loading="lazy"></picture><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Baryshnikova</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
+    <a href="bois-mira.html" class="pcard rv"><div class="img"><picture><source media="(max-width:760px)" srcset="img/bm-cut.webp"><img src="img/bm-1.jpg" alt="Bois Mira bottle" loading="lazy"></picture><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Bois Mira</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
+    <a href="fleur-zubyan.html" class="pcard rv"><div class="img"><picture><source media="(max-width:760px)" srcset="img/fz-cut.webp"><img src="img/fz-1.jpg" alt="Fleur Zubyān bottle" loading="lazy"></picture><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Fleur Zubyān</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
+    <a href="oud-ethalon.html" class="pcard rv"><div class="img"><picture><source media="(max-width:760px)" srcset="img/oe-cut.webp"><img src="img/oe-1.jpg" alt="Oud Ethalon bottle" loading="lazy"></picture><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Oud Ethalon</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
   </div>
 
   <!-- parallax photos -->
