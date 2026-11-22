@@ -144,7 +144,7 @@ picture{display:contents}
 
 /* ---------- collection ---------- */
 .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:calc(24 * var(--u));padding:calc(80 * var(--u)) var(--mr) calc(48 * var(--u)) var(--m)}
-.sec-head h2{font-size:calc(48 * var(--u));margin:calc(16 * var(--u)) 0 0}
+.sec-head h2{font-size:calc(48 * var(--u));margin:0}
 .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:calc(24 * var(--u));padding-left:var(--m);padding-right:var(--mr);padding-block:0 calc(80 * var(--u))}
 .pcard{display:flex;flex-direction:column;align-items:center;text-align:center;gap:calc(16 * var(--u));min-width:0}
 .pcard .img{position:relative;overflow:hidden;width:100%;aspect-ratio:318/320;background:var(--cream)}
@@ -274,7 +274,7 @@ footer .bottom div{display:flex;gap:calc(32 * var(--u))}footer .bottom a{padding
 .fr .in{position:relative;z-index:1;display:flex;flex-direction:column;gap:calc(60 * var(--u));width:100%}
 .fr .t{display:flex;flex-direction:column;gap:calc(20 * var(--u))}
 .fr .eyebrow{color:var(--on-dark)}
-.fr h2{font-size:clamp(calc(64 * var(--u)),7.8vw,calc(112 * var(--u)));line-height:1;margin:calc(12 * var(--u)) 0 0;white-space:pre-line}
+.fr h2{font-size:clamp(calc(64 * var(--u)),7.8vw,calc(112 * var(--u)));line-height:1;margin:0;white-space:pre-line}
 .fr p{font-size:calc(20 * var(--u));line-height:1.55;margin:0;max-width:34em;white-space:pre-line}
 .btn-light{height:calc(56 * var(--u));padding:0 calc(36 * var(--u));display:inline-grid;place-items:center;background:var(--cream);color:var(--brown);letter-spacing:.1em;position:relative;overflow:hidden;align-self:flex-start}
 .btn-light span{position:relative;z-index:1;display:inline-flex;gap:calc(12 * var(--u));align-items:center}
@@ -375,7 +375,7 @@ footer .bottom div{display:flex;gap:calc(32 * var(--u))}footer .bottom a{padding
     <button class="burger" aria-label="Menu"><svg class="icon"><use href="#i-menu"/></svg></button>
     <a href="index.html" class="logo" aria-label="House of Horani, home"></a>
     <nav class="right ui" aria-label="Account">
-      <a href="#" class="hide-sm">About</a>
+      <a href="about.html" class="hide-sm">About</a>
       <a href="#" class="hide-sm">Account</a>
       <div class="lang hide-sm" id="lang">
         <button id="langBtn" aria-haspopup="true" aria-expanded="false" style="display:inline-flex;gap:calc(4 * var(--u));align-items:center"><span id="langCode">EN</span> <svg class="icon chev" style="width:calc(12 * var(--u));height:calc(12 * var(--u))"><use href="#i-chev"/></svg></button>
@@ -394,7 +394,7 @@ footer .bottom div{display:flex;gap:calc(32 * var(--u))}footer .bottom a{padding
   <section class="fr" id="hero">
     <picture><source media="(max-width:760px)" srcset="img/home-baryshnikova-m.jpg"><img data-dark data-par="0.12" src="img/home-baryshnikova.jpg" alt=""></picture>
     <div class="in rv">
-      <div class="t"><div><div class="eyebrow">#01</div><h2 class="display">Baryshnikova</h2></div><p>Dark oud and amber leave a creamy trail that
+      <div class="t"><div><h2 class="display">Baryshnikova</h2></div><p>Dark oud and amber leave a creamy trail that
 stays past the last waltz.</p></div>
       <a href="baryshnikova.html" class="btn-light ui" aria-label="Discover Baryshnikova"><span>Discover the fragrance <svg class="icon m-only"><use href="#i-right"/></svg></span></a>
     </div>
@@ -402,7 +402,7 @@ stays past the last waltz.</p></div>
   <section class="fr">
     <picture><source media="(max-width:760px)" srcset="img/home-ambre-rouge-m.jpg"><img data-dark data-par="0.12" src="img/home-ambre-rouge.jpg" alt="" loading="lazy"></picture>
     <div class="in rv">
-      <div class="t"><div><div class="eyebrow">#02</div><h2 class="display">Ambre
+      <div class="t"><div><h2 class="display">Ambre
 Rouge</h2></div><p>Aged rum and amber in a golden cloud,
 lit by bergamot and saffron.</p></div>
       <a href="ambre-rouge.html" class="btn-light ui" aria-label="Discover Ambre Rouge"><span>Discover the fragrance <svg class="icon m-only"><use href="#i-right"/></svg></span></a>
@@ -411,7 +411,7 @@ lit by bergamot and saffron.</p></div>
   <section class="fr">
     <picture><source media="(max-width:760px)" srcset="img/home-bois-mira-m.jpg"><img data-dark data-par="0.12" src="img/home-bois-mira.jpg" alt="" loading="lazy"></picture>
     <div class="in rv">
-      <div class="t"><div><div class="eyebrow">#03</div><h2 class="display">Bois Mira</h2></div><p>Late night, loud music, the door swings open:
+      <div class="t"><div><h2 class="display">Bois Mira</h2></div><p>Late night, loud music, the door swings open:
 passion fruit and saffron collide with rose and leather.</p></div>
       <a href="bois-mira.html" class="btn-light ui" aria-label="Discover Bois Mira"><span>Discover the fragrance <svg class="icon m-only"><use href="#i-right"/></svg></span></a>
     </div>
@@ -419,7 +419,7 @@ passion fruit and saffron collide with rose and leather.</p></div>
   <section class="fr">
     <picture><source media="(max-width:760px)" srcset="img/home-fleur-zubyan-m.jpg"><img data-dark data-par="0.12" src="img/home-fleur-zubyan.jpg" alt="" loading="lazy"></picture>
     <div class="in rv">
-      <div class="t"><div><div class="eyebrow">#04</div><h2 class="display">Fleur
+      <div class="t"><div><h2 class="display">Fleur
 Zubyān</h2></div><p>Velvet, smoke and crimson rose: cassis and pink
 pepper flash open over orris and violet.</p></div>
       <a href="fleur-zubyan.html" class="btn-light ui" aria-label="Discover Fleur Zubyān"><span>Discover the fragrance <svg class="icon m-only"><use href="#i-right"/></svg></span></a>
@@ -428,7 +428,7 @@ pepper flash open over orris and violet.</p></div>
   <section class="fr">
     <picture><source media="(max-width:760px)" srcset="img/home-oud-ethalon-m.jpg"><img data-dark data-par="0.12" src="img/home-oud-ethalon.jpg" alt="" loading="lazy"></picture>
     <div class="in rv">
-      <div class="t"><div><div class="eyebrow">#05</div><h2 class="display">Oud
+      <div class="t"><div><h2 class="display">Oud
 Ethalon</h2></div><p>The last hour of the gala: black pepper and cardamom
 over weathered leather and rose.</p></div>
       <a href="oud-ethalon.html" class="btn-light ui" aria-label="Discover Oud Ethalon"><span>Discover the fragrance <svg class="icon m-only"><use href="#i-right"/></svg></span></a>
@@ -451,14 +451,12 @@ over weathered leather and rose.</p></div>
   </section>
 
   <section class="dej">
-    <div class="eyebrow">Déjeuner dînatoire</div>
     <h2 class="display rv">An oud that feels like a long lunch on the Riviera — light, generous, unhurried.</h2>
     <a href="#" class="link ui" data-soon>Read the story <svg class="icon"><use href="#i-right"/></svg></a>
   </section>
 
   <div class="sec-head">
-    <div><div class="eyebrow">The collection</div><h2 class="display">Five fragrances</h2></div>
-    <a href="#" class="link ui" data-soon>View all <svg class="icon"><use href="#i-right"/></svg></a>
+    <div><h2 class="display">Five fragrances</h2></div>
   </div>
   <div class="cards home-cards">
     <a href="ambre-rouge.html" class="pcard rv"><div class="img"><picture><source media="(max-width:760px)" srcset="img/ar-cut.webp"><img src="img/ar-1.jpg" alt="Ambre Rouge bottle" loading="lazy"></picture><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Ambre Rouge</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
@@ -476,7 +474,7 @@ over weathered leather and rose.</p></div>
       <h4>New fragrances, private previews and stories from the House.</h4>
       <form id="news"><label for="email" class="eyebrow" hidden>Email address</label><input id="email" type="email" placeholder="Email address" required><button class="ui link">Subscribe <svg class="icon" style="width:calc(12 * var(--u));height:calc(12 * var(--u))"><use href="#i-right"/></svg></button></form>
     </div>
-    <ul><li><a href="#">Concept</a></li><li><a href="#">Fragrances</a></li><li><a href="#">Discovery Set</a></li><li><a href="#">Déjeuner dînatoire</a></li><li><a href="#">About</a></li></ul>
+    <ul><li><a href="#">Concept</a></li><li><a href="#">Fragrances</a></li><li><a href="#">Discovery Set</a></li><li><a href="#">Déjeuner dînatoire</a></li><li><a href="about.html">About</a></li></ul>
     <ul><li><a href="#">Shipping &amp; returns</a></li><li><a href="#">FAQ</a></li><li><a href="#">Contact</a></li><li><a href="#">Account</a></li></ul>
     <ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Refund Policy</a></li><li><a href="#">Cookie Policy</a></li></ul>
   </div>
