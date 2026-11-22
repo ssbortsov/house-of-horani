@@ -61,3 +61,11 @@ body.has-drawer .header .logo.inv,body.has-menu .header .logo.inv{color:var(--br
 .drawer .x{width:calc(32 * var(--u));height:calc(32 * var(--u));display:grid;place-items:center}
 @media (min-width:761px){.mmenu{display:none!important}}
 @media (max-width:760px){body.has-drawer .crumbs,body.has-menu .crumbs{display:none}}
+
+/* header: hides on scroll down, returns on any scroll up */
+.header{transition:transform .45s var(--ease),background .4s var(--ease),color .4s var(--ease),box-shadow .4s}
+.header.hide{transform:translateY(calc(-100% - env(safe-area-inset-top,0px)))}
+/* header: mix-blend-mode difference over the page (off while the drawer, menu or language list is open) */
+body:not(.has-drawer):not(.has-menu) .header:not(:has(.lang.open)){mix-blend-mode:difference;background:transparent;box-shadow:none;color:#fff}
+body:not(.has-drawer):not(.has-menu) .header:not(:has(.lang.open)) :is(nav,a,button,.logo,.burger,.crumbs,.crumbs b,.inv){color:#fff}
+body:not(.has-drawer):not(.has-menu) .header:not(:has(.lang.open)) .crumbs a{opacity:.6}

@@ -19,3 +19,14 @@ const refresh=pn=>{const n=pn.querySelectorAll('.d-item').length;pn.classList.to
 const g=$('.d-gift input');if(g)g.addEventListener('change',()=>g.closest('.d-gift').classList.toggle('on',g.checked));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
 })();
+
+/* header: hide on scroll down, show immediately on scroll up */
+(()=>{
+const h=document.querySelector('.header');if(!h)return;
+let y=scrollY;
+const keep=()=>document.body.classList.contains('has-drawer')||document.body.classList.contains('has-menu')||h.querySelector('.lang.open');
+addEventListener('scroll',()=>{const n=scrollY,d=n-y;y=n;
+  if(n<=h.offsetHeight||keep()||d<0)h.classList.remove('hide');
+  else if(d>2)h.classList.add('hide');},{passive:true});
+h.addEventListener('focusin',()=>h.classList.remove('hide'));
+})();
