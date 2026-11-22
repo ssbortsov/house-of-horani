@@ -13,9 +13,12 @@ document.addEventListener('click',e=>{
   const tb=e.target.closest('.drawer .tab');if(tb){tab(tb.dataset.tab);return;}
   const b=e.target.closest('.burger');if(b&&menu){if(drawer&&drawer.classList.contains('on'))close();const o=menu.classList.toggle('on');document.body.classList.toggle('has-menu',o);return;}
   const rm=e.target.closest('.d-item .rm');if(rm){const it=rm.closest('.d-item'),pn=rm.closest('.panel');it.remove();refresh(pn);return;}
-  const st=e.target.closest('.d-step button');if(st){const s=st.parentElement.querySelector('span');s.textContent=Math.max(1,+s.textContent+(+st.dataset.d));return;}
+  const st=e.target.closest('.d-step button');if(st){const s=st.parentElement.querySelector('span');s.textContent=Math.max(1,+s.textContent+(+st.dataset.d));total();return;}
 });
-const refresh=pn=>{const n=pn.querySelectorAll('.d-item').length;pn.classList.toggle('is-empty',!n);const t=$(`.drawer .tab[data-tab="${pn.dataset.panel}"]`);if(t)t.textContent=t.textContent.replace(/\(\d+\)/,`(${n})`);if(pn.dataset.panel==='bag'){$$('.bagcount').forEach(c=>c.textContent=n);}};
+const refresh=pn=>{const n=pn.querySelectorAll('.d-item').length;pn.classList.toggle('is-empty',!n);const t=$(`.drawer .tab[data-tab="${pn.dataset.panel}"]`);if(t)t.textContent=t.textContent.replace(/\(\d+\)/,`(${n})`);if(pn.dataset.panel==='bag'){$$('.bagcount').forEach(c=>c.textContent=n);total();}};
+/* bag subtotal = sum of price x qty */
+const eur=v=>v.toFixed(2).replace('.',',')+' €';
+const total=()=>{const pn=$('.drawer .panel[data-panel="bag"]'),out=pn&&pn.querySelector('.sum span:last-child');if(!out)return;let t=0;pn.querySelectorAll('.d-item').forEach(it=>{const pr=it.querySelector('.row span:last-child'),qt=it.querySelector('.d-step span');const p=pr?parseFloat(pr.textContent.replace(/[^\d,]/g,'').replace(',','.'))||0:0;t+=p*(qt?+qt.textContent:1);});out.textContent=eur(t);};
 const g=$('.d-gift input');if(g)g.addEventListener('change',()=>g.closest('.d-gift').classList.toggle('on',g.checked));
 document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
 })();

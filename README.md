@@ -16,6 +16,6 @@ Static responsive build (desktop 1440 / mobile 375, breakpoint 760 px), synced w
 - `css/pages.css`, `js/page.js` — content and service pages
 
 ## To fill in
-- Prices: `[price] €`, `— €`
+- Prices are template values (100 ml — 79,50 €, Discovery Set — 24,00 €, shipping 7–25 €)
 - Legal placeholders: `[Company legal name]`, `[registered address]`, `[date]`, `[X] years`, `[jurisdiction]`
 - Checkout is a prototype of the Shopify checkout; forms do not send data.
