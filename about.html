@@ -392,6 +392,8 @@ footer .bottom div{display:flex;gap:calc(32 * var(--u))}footer .bottom a{padding
   .press h2{font-size:calc(24 * var(--u))}
 }
 </style>
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/pages.css">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -405,21 +407,22 @@ footer .bottom div{display:flex;gap:calc(32 * var(--u))}footer .bottom a{padding
   <symbol id="i-upright" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
 </svg>
 
 <header class="header" id="header">
   <div class="bar">
     <nav class="left ui" aria-label="Main">
-      <a href="#">Concept</a>
-      <a href="#" style="display:inline-flex;gap:calc(4 * var(--u));align-items:center">Fragrances <svg class="icon" style="width:calc(12 * var(--u));height:calc(12 * var(--u))"><use href="#i-chev"/></svg></a>
-      <a href="#">Discovery Set</a>
-      <a href="#">Déjeuner dînatoire</a>
+      <a href="concept.html">Concept</a>
+      <a href="index.html#fragrances" style="display:inline-flex;gap:calc(4 * var(--u));align-items:center">Fragrances <svg class="icon" style="width:calc(12 * var(--u));height:calc(12 * var(--u))"><use href="#i-chev"/></svg></a>
+      <a href="discovery-set.html">Discovery Set</a>
+      <a href="dejeuner.html">Déjeuner dînatoire</a>
     </nav>
     <button class="burger" aria-label="Menu"><svg class="icon"><use href="#i-menu"/></svg></button>
     <a href="index.html" class="logo" aria-label="House of Horani, home"></a>
     <nav class="right ui" aria-label="Account">
       <a href="about.html" class="hide-sm">About</a>
-      <a href="#" class="hide-sm">Account</a>
+      <a href="sign-in.html" class="hide-sm">Account</a>
       <div class="lang hide-sm" id="lang">
         <button id="langBtn" aria-haspopup="true" aria-expanded="false" style="display:inline-flex;gap:calc(4 * var(--u));align-items:center"><span id="langCode">EN</span> <svg class="icon chev" style="width:calc(12 * var(--u));height:calc(12 * var(--u))"><use href="#i-chev"/></svg></button>
         <div class="menu" role="menu">
@@ -427,51 +430,47 @@ footer .bottom div{display:flex;gap:calc(32 * var(--u))}footer .bottom a{padding
           <button data-l="DE">Deutsch</button><button data-l="FR">Français</button><button data-l="ES">Español</button><button data-l="IT">Italiano</button>
         </div>
       </div>
-      <a href="#" aria-label="Wishlist"><svg class="icon heart" id="hdrHeart" style="width:calc(16 * var(--u));height:calc(16 * var(--u))"><use href="#i-heart"/></svg></a>
-      <a href="#">Bag (<span class="bagcount" id="bagCount">1</span>)</a>
+      <a href="#" data-open="wish" aria-label="Wishlist"><svg class="icon heart" id="hdrHeart" style="width:calc(16 * var(--u));height:calc(16 * var(--u))"><use href="#i-heart"/></svg></a>
+      <a href="#" data-open="bag">Bag (<span class="bagcount" id="bagCount">1</span>)</a>
     </nav>
   </div>
+  <div class="crumbs"><a href="index.html">Home</a><span>/</span><b>About</b></div>
 </header>
 
 <main>
   <section class="fr about-hero" id="hero">
-    <picture><img data-dark data-par="0.12" src="img/ar-mood.jpg" alt="Candle-lit dinner table late in the evening"></picture>
+    <picture><img data-dark data-par="0.12" src="img/ar-mood.jpg" alt="Candle-lit table in the evening"></picture>
     <div class="in rv">
-      <div class="t"><div><h1 class="display">House of Horani</h1></div><p>An oud house for the evening. Five extraits de parfum
-for the long night of La Grande Soirée.</p></div>
-      <a href="index.html" class="btn-light ui"><span>Discover the fragrances <svg class="icon m-only"><use href="#i-right"/></svg></span></a>
+      <div class="t"><div><h1 class="display">House of Horani</h1></div><p>An oud house that follows the day. Five extraits de parfum, from the first light of the morning to the last hour of the night.</p></div>
+      <a href="index.html#fragrances" class="btn-light ui"><span>Discover the fragrances <svg class="icon m-only"><use href="#i-right"/></svg></span></a>
     </div>
   </section>
-
   <section class="dej about-st">
-    <h2 class="display rv">We start with oud — the darkest, most precious note — and make it wearable from the first toast to the last dance.</h2>
+    <h2 class="display rv">One day, five hours, five fragrances. We start with oud and let the light of the day decide the rest.</h2>
   </section>
-
   <section class="split">
     <div class="img"><img data-par="0.1" src="img/fz-p1.jpg" alt="Woman in a sunlit garden" loading="lazy"></div>
-    <div class="txt rv"><h2 class="display">Built around oud</h2><p>Every fragrance in the collection rests on oud. Around it we build five very different evenings: honeyed tuberose, rum and amber, crimson rose, black pepper and leather, passion fruit and saffron.</p></div>
+    <div class="txt rv"><h2 class="display">Who we are</h2><p>House of Horani was founded by Marina Baryshnikova. Travelling a great deal, she noticed that a place stays in memory through its hours: the cool of the morning, the heat of noon, the long golden afternoon, the first lights of the evening and the warmth of the night. From this came the wish to bottle those hours — one fragrance for each.</p></div>
   </section>
   <section class="split rev">
     <div class="img"><img data-dark data-par="0.1" src="img/oe-p2.jpg" alt="Guests on a sofa late at night" loading="lazy"></div>
-    <div class="txt rv"><h2 class="display">Extrait strength</h2><p>Each fragrance is an Extrait de Parfum at 32% concentration. One or two sprays carry it through the night — on skin, in hair, on a scarf.</p></div>
+    <div class="txt rv"><h2 class="display">Inspired by the East</h2><p>Our fragrances draw on the perfume traditions of the East, where oils are worn close to the skin and a scent lasts from dusk until dawn. Oud, rose, saffron, amber and precious woods — oils of Eastern perfumery — sit at the heart of every composition. Each fragrance is an Extrait de Parfum at 32% concentration, for those who step away from the mainstream and look for intense, unexpected sensations.</p></div>
   </section>
-
   <div class="box-head"><h2 class="display">Made to be given</h2></div>
   <div class="box">
     <figure class="rv"><div class="img"><img data-dark src="img/box-1.jpg" alt="Rigid box with the bottle inside" loading="lazy"></div><figcaption><h3 class="display">Rigid box</h3><span>Embossed border, horani-brown interior</span></figcaption></figure>
     <figure class="rv"><div class="img"><img data-dark src="img/box-2.jpg" alt="Cotton dust bag on a wooden table" loading="lazy"></div><figcaption><h3 class="display">Dust bag</h3><span>Natural cotton, drawstring</span></figcaption></figure>
     <figure class="rv"><div class="img"><img src="img/box-3.jpg" alt="Fragrance card and envelope" loading="lazy"></div><figcaption><h3 class="display">Fragrance card</h3><span>Notes and story of the scent</span></figcaption></figure>
   </div>
-
   <div class="sec-head">
-    <div><h2 class="display">Five fragrances</h2></div>
+    <div><h2 class="display">A fragrance for every hour</h2></div>
   </div>
   <div class="cards home-cards">
-    <a href="ambre-rouge.html" class="pcard rv"><div class="img"><picture><source media="(max-width:760px)" srcset="img/ar-cut.webp"><img src="img/ar-1.jpg" alt="Ambre Rouge bottle" loading="lazy"></picture><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Ambre Rouge</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
-    <a href="oud-ethalon.html" class="pcard rv"><div class="img"><picture><source media="(max-width:760px)" srcset="img/oe-cut.webp"><img src="img/oe-1.jpg" alt="Oud Ethalon bottle" loading="lazy"></picture><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Oud Ethalon</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
-    <a href="fleur-zubyan.html" class="pcard rv"><div class="img"><picture><source media="(max-width:760px)" srcset="img/fz-cut.webp"><img src="img/fz-1.jpg" alt="Fleur Zubyān bottle" loading="lazy"></picture><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Fleur Zubyān</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
-    <a href="bois-mira.html" class="pcard rv"><div class="img"><picture><source media="(max-width:760px)" srcset="img/bm-cut.webp"><img src="img/bm-1.jpg" alt="Bois Mira bottle" loading="lazy"></picture><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Bois Mira</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
-    <a href="baryshnikova.html" class="pcard rv"><div class="img"><picture><source media="(max-width:760px)" srcset="img/ba-cut.webp"><img src="img/ba-1.jpg" alt="Baryshnikova bottle" loading="lazy"></picture><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Baryshnikova</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
+    <a href="bois-mira.html" class="pcard rv"><div class="img"><picture><source media="(max-width:760px)" srcset="img/bm-cut.webp"><img src="img/bm-1.jpg" alt="Bois Mira bottle" loading="lazy"></picture><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Bois Mira</h3><span class="sub time">Morning</span><span class="sub">Extrait de Parfum · 100 ml</span></a>
+    <a href="fleur-zubyan.html" class="pcard rv"><div class="img"><picture><source media="(max-width:760px)" srcset="img/fz-cut.webp"><img src="img/fz-1.jpg" alt="Fleur Zubyān bottle" loading="lazy"></picture><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Fleur Zubyān</h3><span class="sub time">Noon</span><span class="sub">Extrait de Parfum · 100 ml</span></a>
+    <a href="baryshnikova.html" class="pcard rv"><div class="img"><picture><source media="(max-width:760px)" srcset="img/ba-cut.webp"><img src="img/ba-1.jpg" alt="Baryshnikova bottle" loading="lazy"></picture><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Baryshnikova</h3><span class="sub time">Afternoon</span><span class="sub">Extrait de Parfum · 100 ml</span></a>
+    <a href="ambre-rouge.html" class="pcard rv"><div class="img"><picture><source media="(max-width:760px)" srcset="img/ar-cut.webp"><img src="img/ar-1.jpg" alt="Ambre Rouge bottle" loading="lazy"></picture><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Ambre Rouge</h3><span class="sub time">Early evening</span><span class="sub">Extrait de Parfum · 100 ml</span></a>
+    <a href="oud-ethalon.html" class="pcard rv"><div class="img"><picture><source media="(max-width:760px)" srcset="img/oe-cut.webp"><img src="img/oe-1.jpg" alt="Oud Ethalon bottle" loading="lazy"></picture><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Oud Ethalon</h3><span class="sub time">Night</span><span class="sub">Extrait de Parfum · 100 ml</span></a>
   </div>
   <section class="set">
     <div class="img"><img src="img/home-set.jpg" alt="Discovery set: five 2 ml samples in a white box" loading="lazy"></div>
@@ -479,15 +478,14 @@ for the long night of La Grande Soirée.</p></div>
       <div class="rv">
         <h2 class="display">Try the whole collection</h2>
         <p>5 × 2 ml samples and a fragrance card.<br> The best way to find your scent.</p>
-        <a href="#" class="link ui" data-soon>More about the set <svg class="icon"><use href="#i-right"/></svg></a>
+        <a href="discovery-set.html" class="link ui">More about the set <svg class="icon"><use href="#i-right"/></svg></a>
       </div>
       <div class="cta rv">
-        <button class="btn ui" id="setAdd"><span>Add to bag</span></button>
-        <button class="btn-line ui" id="setWish" aria-pressed="false"><span>Add to wishlist <svg class="icon heart" id="setHeart" style="width:calc(16 * var(--u));height:calc(16 * var(--u))"><use href="#i-heart"/></svg></span></button>
+        <button class="btn ui" data-add="Discovery Set"><span>Add to bag</span></button>
+        <button class="btn-line ui" data-open="wish"><span>Add to wishlist <svg class="icon heart" style="width:calc(16 * var(--u));height:calc(16 * var(--u))"><use href="#i-heart"/></svg></span></button>
       </div>
     </div>
   </section>
-
   <section class="press">
     <h2 class="display">press@houseofhorani.com</h2>
     <a href="mailto:press@houseofhorani.com" class="btn-outline ui"><span>Contact</span></a>
@@ -495,70 +493,45 @@ for the long night of La Grande Soirée.</p></div>
 </main>
 
 <footer>
-  <div class="top"><div class="flogo" role="img" aria-label="House of Horani"></div><a href="#" class="link ui">Instagram <svg class="icon" style="width:calc(12 * var(--u));height:calc(12 * var(--u))"><use href="#i-upright"/></svg></a></div>
+  <div class="top"><div class="flogo" role="img" aria-label="House of Horani"></div><a href="https://instagram.com/" class="link ui" target="_blank" rel="noopener">Instagram <svg class="icon" style="width:calc(12 * var(--u));height:calc(12 * var(--u))"><use href="#i-upright"/></svg></a></div>
   <div class="mid">
     <div class="news">
       <h4>New fragrances, private previews and stories from the House.</h4>
       <form id="news"><label for="email" class="eyebrow" hidden>Email address</label><input id="email" type="email" placeholder="Email address" required><button class="ui link">Subscribe <svg class="icon" style="width:calc(12 * var(--u));height:calc(12 * var(--u))"><use href="#i-right"/></svg></button></form>
     </div>
-    <ul><li><a href="#">Concept</a></li><li><a href="#">Fragrances</a></li><li><a href="#">Discovery Set</a></li><li><a href="#">Déjeuner dînatoire</a></li><li><a href="about.html">About</a></li></ul>
-    <ul><li><a href="#">Shipping &amp; returns</a></li><li><a href="#">FAQ</a></li><li><a href="#">Contact</a></li><li><a href="#">Account</a></li></ul>
-    <ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Refund Policy</a></li><li><a href="#">Cookie Policy</a></li></ul>
+    <ul><li><a href="concept.html">Concept</a></li><li><a href="index.html#fragrances">Fragrances</a></li><li><a href="discovery-set.html">Discovery Set</a></li><li><a href="dejeuner.html">Déjeuner dînatoire</a></li><li><a href="about.html">About</a></li></ul>
+    <ul><li><a href="shipping-returns.html">Shipping &amp; returns</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li><li><a href="sign-in.html">Account</a></li></ul>
+    <ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li><li><a href="refund-policy.html">Refund Policy</a></li><li><a href="cookie-policy.html">Cookie Policy</a></li></ul>
   </div>
-  <div class="bottom ui"><div><a href="#">Privacy policy</a><a href="#">Cookie policy</a></div><span>© 2026 House of Horani</span></div>
+  <div class="bottom ui"><div><a href="privacy-policy.html">Privacy policy</a><a href="cookie-policy.html">Cookie policy</a></div><span>© 2026 House of Horani</span></div>
 </footer>
 
+<div class="scrim"></div>
+<aside class="drawer" aria-label="Bag and wishlist">
+  <div class="d-head"><div class="tabs ui" role="tablist"><button class="tab on" data-tab="bag">Bag (1)</button><button class="tab" data-tab="wish">Wishlist (2)</button></div><button class="x" data-close aria-label="Close"><svg class="icon" style="width:calc(20 * var(--u));height:calc(20 * var(--u))"><use href="#i-close"/></svg></button></div>
+  <div class="panel on" data-panel="bag">
+    <div class="list">
+      <div class="d-item"><a class="im" href="baryshnikova.html"><img src="img/ba-1.jpg" alt="Baryshnikova bottle" loading="lazy"></a><div><div class="row"><span>Baryshnikova</span><span>— €</span></div><div class="sub">Extrait de Parfum · 100 ml</div><div class="act"><div class="d-step"><button data-d="-1" aria-label="Decrease"><svg class="icon" style="width:calc(14 * var(--u));height:calc(14 * var(--u))"><use href="#i-minus"/></svg></button><span>1</span><button data-d="1" aria-label="Increase"><svg class="icon" style="width:calc(14 * var(--u));height:calc(14 * var(--u))"><use href="#i-plus"/></svg></button></div><button class="rm ui">Remove</button></div></div></div>
+      <a class="d-cross" href="discovery-set.html"><img src="img/home-set.jpg" alt="" loading="lazy"><div>Discovery Set<small>5 × 2 ml · try the whole collection</small></div><svg class="icon" style="width:calc(16 * var(--u));height:calc(16 * var(--u))"><use href="#i-right"/></svg></a>
+      <div class="d-gift"><label><input type="checkbox"> Add a gift note</label><textarea placeholder="Your message — printed on a card in the box" aria-label="Gift note"></textarea></div>
+    </div>
+    <div class="foot"><div class="sum"><span>Subtotal</span><span>— €</span></div><div class="note">Shipping and taxes are calculated at checkout.</div><a href="checkout.html" class="btn ui"><span>Checkout</span></a></div>
+    <div class="empty"><h3 class="display">Your bag is empty</h3><p>Five fragrances, from the first light of the morning to the last hour of the night.</p><a href="index.html#fragrances" class="btn-o ui">Discover the fragrances</a></div>
+  </div>
+  <div class="panel" data-panel="wish">
+    <div class="list">
+      <div class="d-item"><a class="im" href="bois-mira.html"><img src="img/bm-1.jpg" alt="Bois Mira bottle" loading="lazy"></a><div><div class="row"><span>Bois Mira</span><span>— €</span></div><div class="sub">Extrait de Parfum · 100 ml</div><div class="act"><button class="ui" data-add="Bois Mira">Add to bag</button><button class="rm ui">Remove</button></div></div></div>
+      <div class="d-item"><a class="im" href="oud-ethalon.html"><img src="img/oe-1.jpg" alt="Oud Ethalon bottle" loading="lazy"></a><div><div class="row"><span>Oud Ethalon</span><span>— €</span></div><div class="sub">Extrait de Parfum · 100 ml</div><div class="act"><button class="ui" data-add="Oud Ethalon">Add to bag</button><button class="rm ui">Remove</button></div></div></div>
+    </div>
+    <div class="empty"><h3 class="display">Your wishlist is empty</h3><p>Tap the heart on a fragrance to keep it here.</p><a href="index.html#fragrances" class="btn-o ui">Discover the fragrances</a></div>
+  </div>
+</aside>
+<nav class="mmenu" aria-label="Menu">
+  <a href="concept.html">Concept</a><a href="index.html#fragrances">Fragrances</a><a href="discovery-set.html">Discovery Set</a><a href="dejeuner.html">Déjeuner dînatoire</a><a href="about.html">About</a>
+  <hr><a class="sm" href="sign-in.html">Account</a><a class="sm" href="faq.html">FAQ</a><a class="sm" href="contact.html">Contact</a><a class="sm" href="#" data-soon>Language · EN</a>
+</nav>
 <div class="toast" id="toast" role="status"></div>
-
-<div class="toast" id="toast" role="status"></div>
-
-<script>
-(()=>{
-const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const toast=(m)=>{const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2200);};
-
-/* header: transparent over the first screen; items invert over dark content */
-const header=$('#header'), hero=$('#hero');
-const zones=[...header.querySelectorAll('.bar>nav,.bar>.logo,.bar>.burger')];
-const lum=c=>{const m=c.match(/[\d.]+/g); if(!m||(m[3]!==undefined&&+m[3]<.5)) return null; return (.2126*m[0]+.7152*m[1]+.0722*m[2])/255;};
-const isDark=(x,y)=>{for(const el of document.elementsFromPoint(x,y)){ if(header.contains(el)) continue; if(el.tagName==='IMG') return el.hasAttribute('data-dark'); const l=lum(getComputedStyle(el).backgroundColor); if(l!==null) return l<.5;} return false;};
-const onHeader=()=>{const past=scrollY>hero.offsetHeight-80; let any=false;
-  for(const z of zones){const r=z.getBoundingClientRect(); if(!r.width||!r.height) continue; const d=isDark(r.left+r.width/2,r.top+r.height/2); z.classList.toggle('inv',d); any=any||d;}
-  header.classList.toggle('past',past); header.classList.toggle('solid',past&&!any);};
-
-/* links to pages not built yet */
-$$('[data-soon]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();toast('This page is not in the prototype yet');}));
-
-/* discovery set */
-let bag=1;
-$('#setAdd').onclick=()=>{bag++;const c=$('#bagCount');c.textContent=bag;c.classList.add('bump');setTimeout(()=>c.classList.remove('bump'),300);toast('Discovery set added to bag');};
-$('#setWish').onclick=e=>{const on=!$('#setHeart').classList.contains('on');['#setHeart','#hdrHeart'].forEach(s=>$(s).classList.toggle('on',on));e.currentTarget.setAttribute('aria-pressed',on);toast(on?'Saved to wishlist':'Removed from wishlist');};
-
-/* language */
-const lang=$('#lang');
-$('#langBtn').onclick=e=>{e.stopPropagation();const o=lang.classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',o);};
-lang.querySelectorAll('.menu button').forEach(b=>b.onclick=()=>{$('#langCode').textContent=b.dataset.l;lang.querySelectorAll('.menu button svg').forEach(s=>s.remove());b.insertAdjacentHTML('beforeend','<svg class="icon" style="width:calc(16 * var(--u));height:calc(16 * var(--u))"><use href="#i-check"/></svg>');lang.classList.remove('open');});
-document.addEventListener('click',()=>lang.classList.remove('open'));
-
-/* newsletter */
-$('#news').addEventListener('submit',e=>{e.preventDefault();toast('Thank you — you are on the list');e.target.reset();});
-
-/* reveal */
-const rv=$$('.rv');
-if(!reduce && 'IntersectionObserver' in window){
-  rv.forEach(el=>{ if(el.getBoundingClientRect().top>innerHeight) el.classList.add('pre'); });
-  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ const el=e.target; const idx=[...el.parentElement.children].indexOf(el); el.style.transitionDelay=(idx%5)*90+'ms'; el.classList.remove('pre'); io.unobserve(el);} }),{rootMargin:'0px 0px -8% 0px'});
-  rv.forEach(el=>io.observe(el));
-}
-
-/* parallax */
-const pars=$$('[data-par]');
-const tick=()=>{ onHeader(); if(reduce) return; const vh=innerHeight;
-  pars.forEach(img=>{const r=(img.closest("picture")||img).parentElement.getBoundingClientRect(); if(r.bottom<0||r.top>vh) return; const p=(r.top+r.height/2-vh/2)/vh; img.style.transform=`translate3d(0,${(-p*img.dataset.par*100).toFixed(2)}%,0)`;});};
-let raf=0; addEventListener('scroll',()=>{ if(!raf) raf=requestAnimationFrame(()=>{raf=0;tick();}); },{passive:true});
-addEventListener('resize',tick); tick();
-})();
-</script>
+<script src="js/page.js"></script>
+<script src="js/site.js"></script>
 </body>
 </html>

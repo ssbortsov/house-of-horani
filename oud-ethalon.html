@@ -298,6 +298,7 @@ footer .bottom div{display:flex;gap:calc(32 * var(--u))}footer .bottom a{padding
   .rv.pre{transform:none}
 }
 </style>
+<link rel="stylesheet" href="css/site.css">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-left" viewBox="0 0 24 24"><path d="M20 12H4M10 6l-6 6 6 6"/></symbol>
@@ -309,22 +310,23 @@ footer .bottom div{display:flex;gap:calc(32 * var(--u))}footer .bottom a{padding
   <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
   <symbol id="i-upright" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
   <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
 </svg>
 
 <header class="header" id="header">
   <div class="bar">
     <nav class="left ui" aria-label="Main">
-      <a href="#">Concept</a>
-      <a href="#" style="display:inline-flex;gap:calc(4 * var(--u));align-items:center">Fragrances <svg class="icon" style="width:calc(12 * var(--u));height:calc(12 * var(--u))"><use href="#i-chev"/></svg></a>
-      <a href="#">Discovery Set</a>
-      <a href="#">Déjeuner dînatoire</a>
+      <a href="concept.html">Concept</a>
+      <a href="index.html#fragrances" style="display:inline-flex;gap:calc(4 * var(--u));align-items:center">Fragrances <svg class="icon" style="width:calc(12 * var(--u));height:calc(12 * var(--u))"><use href="#i-chev"/></svg></a>
+      <a href="discovery-set.html">Discovery Set</a>
+      <a href="dejeuner.html">Déjeuner dînatoire</a>
     </nav>
     <button class="burger" aria-label="Menu"><svg class="icon"><use href="#i-menu"/></svg></button>
     <a href="index.html" class="logo" aria-label="House of Horani, home"></a>
     <nav class="right ui" aria-label="Account">
       <a href="about.html" class="hide-sm">About</a>
-      <a href="#" class="hide-sm">Account</a>
+      <a href="sign-in.html" class="hide-sm">Account</a>
       <div class="lang hide-sm" id="lang">
         <button id="langBtn" aria-haspopup="true" aria-expanded="false" style="display:inline-flex;gap:calc(4 * var(--u));align-items:center"><span id="langCode">EN</span> <svg class="icon chev" style="width:calc(12 * var(--u));height:calc(12 * var(--u))"><use href="#i-chev"/></svg></button>
         <div class="menu" role="menu">
@@ -332,11 +334,11 @@ footer .bottom div{display:flex;gap:calc(32 * var(--u))}footer .bottom a{padding
           <button data-l="DE">Deutsch</button><button data-l="FR">Français</button><button data-l="ES">Español</button><button data-l="IT">Italiano</button>
         </div>
       </div>
-      <a href="#" aria-label="Wishlist"><svg class="icon heart" id="hdrHeart" style="width:calc(16 * var(--u));height:calc(16 * var(--u))"><use href="#i-heart"/></svg></a>
-      <a href="#">Bag (<span class="bagcount" id="bagCount">1</span>)</a>
+      <a href="#" data-open="wish" aria-label="Wishlist"><svg class="icon heart" id="hdrHeart" style="width:calc(16 * var(--u));height:calc(16 * var(--u))"><use href="#i-heart"/></svg></a>
+      <a href="#" data-open="bag">Bag (<span class="bagcount" id="bagCount">1</span>)</a>
     </nav>
   </div>
-  <div class="crumbs"><a href="index.html">Home</a><span>/</span><a href="#">Fragrances</a><span>/</span><b>Oud Ethalon</b></div>
+  <div class="crumbs"><a href="index.html">Home</a><span>/</span><a href="index.html#fragrances">Fragrances</a><span>/</span><b>Oud Ethalon</b></div>
 </header>
 
 <main>
@@ -426,7 +428,7 @@ footer .bottom div{display:flex;gap:calc(32 * var(--u))}footer .bottom a{padding
   <!-- collection -->
   <div class="sec-head">
     <div><div class="eyebrow">The collection</div><h2 class="display">Five fragrances</h2></div>
-    <a href="#" class="link ui">View all <svg class="icon"><use href="#i-right"/></svg></a>
+    <a href="index.html#fragrances" class="link ui">View all <svg class="icon"><use href="#i-right"/></svg></a>
   </div>
   <div class="cards">
     <a href="baryshnikova.html" class="pcard rv"><div class="img"><picture><source media="(max-width:760px)" srcset="img/ba-cut.webp"><img src="img/ba-1.jpg" alt="Baryshnikova bottle" loading="lazy"></picture><img class="alt" src="img/card-hover.jpg" alt="" loading="lazy"></div><h3 class="display">Baryshnikova</h3><span class="sub">Extrait de Parfum · 100 ml</span><span class="pr">79,50 €</span></a>
@@ -480,21 +482,44 @@ footer .bottom div{display:flex;gap:calc(32 * var(--u))}footer .bottom a{padding
 </main>
 
 <footer>
-  <div class="top"><div class="flogo" role="img" aria-label="House of Horani"></div><a href="#" class="link ui">Instagram <svg class="icon" style="width:calc(12 * var(--u));height:calc(12 * var(--u))"><use href="#i-upright"/></svg></a></div>
+  <div class="top"><div class="flogo" role="img" aria-label="House of Horani"></div><a href="https://instagram.com/" target="_blank" rel="noopener" class="link ui">Instagram <svg class="icon" style="width:calc(12 * var(--u));height:calc(12 * var(--u))"><use href="#i-upright"/></svg></a></div>
   <div class="mid">
     <div class="news">
       <h4>New fragrances, private previews and stories from the House.</h4>
       <form id="news"><label for="email" class="eyebrow" hidden>Email address</label><input id="email" type="email" placeholder="Email address" required><button class="ui link">Subscribe <svg class="icon" style="width:calc(12 * var(--u));height:calc(12 * var(--u))"><use href="#i-right"/></svg></button></form>
     </div>
-    <ul><li><a href="#">Concept</a></li><li><a href="#">Fragrances</a></li><li><a href="#">Discovery Set</a></li><li><a href="#">Déjeuner dînatoire</a></li><li><a href="about.html">About</a></li></ul>
-    <ul><li><a href="#">Shipping &amp; returns</a></li><li><a href="#">FAQ</a></li><li><a href="#">Contact</a></li><li><a href="#">Account</a></li></ul>
-    <ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Refund Policy</a></li><li><a href="#">Cookie Policy</a></li></ul>
+    <ul><li><a href="concept.html">Concept</a></li><li><a href="index.html#fragrances">Fragrances</a></li><li><a href="discovery-set.html">Discovery Set</a></li><li><a href="dejeuner.html">Déjeuner dînatoire</a></li><li><a href="about.html">About</a></li></ul>
+    <ul><li><a href="shipping-returns.html">Shipping &amp; returns</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li><li><a href="sign-in.html">Account</a></li></ul>
+    <ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li><li><a href="refund-policy.html">Refund Policy</a></li><li><a href="cookie-policy.html">Cookie Policy</a></li></ul>
   </div>
-  <div class="bottom ui"><div><a href="#">Privacy policy</a><a href="#">Cookie policy</a></div><span>© 2026 House of Horani</span></div>
+  <div class="bottom ui"><div><a href="privacy-policy.html">Privacy policy</a><a href="cookie-policy.html">Cookie policy</a></div><span>© 2026 House of Horani</span></div>
 </footer>
 
+<div class="scrim"></div>
+<aside class="drawer" aria-label="Bag and wishlist">
+  <div class="d-head"><div class="tabs ui" role="tablist"><button class="tab on" data-tab="bag">Bag (1)</button><button class="tab" data-tab="wish">Wishlist (2)</button></div><button class="x" data-close aria-label="Close"><svg class="icon" style="width:calc(20 * var(--u));height:calc(20 * var(--u))"><use href="#i-close"/></svg></button></div>
+  <div class="panel on" data-panel="bag">
+    <div class="list">
+      <div class="d-item"><a class="im" href="baryshnikova.html"><img src="img/ba-1.jpg" alt="Baryshnikova bottle" loading="lazy"></a><div><div class="row"><span>Baryshnikova</span><span>— €</span></div><div class="sub">Extrait de Parfum · 100 ml</div><div class="act"><div class="d-step"><button data-d="-1" aria-label="Decrease"><svg class="icon" style="width:calc(14 * var(--u));height:calc(14 * var(--u))"><use href="#i-minus"/></svg></button><span>1</span><button data-d="1" aria-label="Increase"><svg class="icon" style="width:calc(14 * var(--u));height:calc(14 * var(--u))"><use href="#i-plus"/></svg></button></div><button class="rm ui">Remove</button></div></div></div>
+      <a class="d-cross" href="discovery-set.html"><img src="img/home-set.jpg" alt="" loading="lazy"><div>Discovery Set<small>5 × 2 ml · try the whole collection</small></div><svg class="icon" style="width:calc(16 * var(--u));height:calc(16 * var(--u))"><use href="#i-right"/></svg></a>
+      <div class="d-gift"><label><input type="checkbox"> Add a gift note</label><textarea placeholder="Your message — printed on a card in the box" aria-label="Gift note"></textarea></div>
+    </div>
+    <div class="foot"><div class="sum"><span>Subtotal</span><span>— €</span></div><div class="note">Shipping and taxes are calculated at checkout.</div><a href="checkout.html" class="btn ui"><span>Checkout</span></a></div>
+    <div class="empty"><h3 class="display">Your bag is empty</h3><p>Five fragrances, from the first light of the morning to the last hour of the night.</p><a href="index.html#fragrances" class="btn-o ui">Discover the fragrances</a></div>
+  </div>
+  <div class="panel" data-panel="wish">
+    <div class="list">
+      <div class="d-item"><a class="im" href="bois-mira.html"><img src="img/bm-1.jpg" alt="Bois Mira bottle" loading="lazy"></a><div><div class="row"><span>Bois Mira</span><span>— €</span></div><div class="sub">Extrait de Parfum · 100 ml</div><div class="act"><button class="ui" data-add="Bois Mira">Add to bag</button><button class="rm ui">Remove</button></div></div></div>
+      <div class="d-item"><a class="im" href="oud-ethalon.html"><img src="img/oe-1.jpg" alt="Oud Ethalon bottle" loading="lazy"></a><div><div class="row"><span>Oud Ethalon</span><span>— €</span></div><div class="sub">Extrait de Parfum · 100 ml</div><div class="act"><button class="ui" data-add="Oud Ethalon">Add to bag</button><button class="rm ui">Remove</button></div></div></div>
+    </div>
+    <div class="empty"><h3 class="display">Your wishlist is empty</h3><p>Tap the heart on a fragrance to keep it here.</p><a href="index.html#fragrances" class="btn-o ui">Discover the fragrances</a></div>
+  </div>
+</aside>
+<nav class="mmenu" aria-label="Menu">
+  <a href="concept.html">Concept</a><a href="index.html#fragrances">Fragrances</a><a href="discovery-set.html">Discovery Set</a><a href="dejeuner.html">Déjeuner dînatoire</a><a href="about.html">About</a>
+  <hr><a class="sm" href="sign-in.html">Account</a><a class="sm" href="faq.html">FAQ</a><a class="sm" href="contact.html">Contact</a><a class="sm" href="#" data-soon>Language · EN</a>
+</nav>
 <div class="toast" id="toast" role="status"></div>
-
 <script>
 (()=>{
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
@@ -598,3 +623,4 @@ let raf=0; addEventListener('scroll',()=>{ if(!raf) raf=requestAnimationFrame(()
 addEventListener('resize',tick); tick();
 })();
 </script>
+<script src="js/site.js"></script>
